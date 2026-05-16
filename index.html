@@ -124,112 +124,72 @@
     </div>
   </div>
 
-  <!-- المنتجات -->
-  <div class="container" id="products">
-    <h2 class="section-title">منتجاتنا</h2>
-    <p class="section-sub">تركيبات زيوت طبيعية • ملابس جاهزة • مفروشات قطن 100% يدوية</p>
+  <!-- معرض الصور الجاهز -->
+  <div class="container" id="gallery">
+    <h2 class="section-title">معرض منتجات AMM INTL</h2>
+    <p class="section-sub">زيوت طبيعية • ملابس فاخرة • مفروشات قطنية 100%</p>
     
-    <div class="filters">
-      <button class="active" onclick="filterProducts('all')">كل المنتجات</button>
-      <button onclick="filterProducts('oils')">زيوت الشعر والبشرة</button>
-      <button onclick="filterProducts('clothes')">ملابس جاهزة</button>
-      <button onclick="filterProducts('bedding')">مفروشات وكوفرتات</button>
-    </div>
-
-    <div class="grid" id="productGrid">
-      <!-- زيوت للشعر والبشرة -->
-      <div class="card" data-category="oils">
-        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500" alt="تركيبة زيوت تكثيف الشعر">
-        <div class="card-body">
-          <h3>تركيبة زيوت لتكثيف الشعر</h3>
-          <p>خليط أرغان + خروع + إكليل الجبل + جوجوبا. 100ml</p>
-          <div class="price">85 درهم</div>
-          <button class="btn" onclick="orderWhatsApp('تركيبة زيوت تكثيف الشعر - 85 درهم')">اطلب عبر واتساب</button>
-        </div>
+    <div class="gallery-grid">
+      <!-- زيوت طبيعية -->
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600" loading="lazy" alt="زيت أرغان طبيعي" onclick="openLightbox(this.src)">
+        <span class="gallery-label">زيوت طبيعية</span>
       </div>
-
-      <div class="card" data-category="oils">
-        <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=500" alt="سيروم تفتيح البشرة">
-        <div class="card-body">
-          <h3>سيروم زيوت لتفتيح البشرة</h3>
-          <p>بزيت الورد، فيتامين E، وعرق السوس. 50ml</p>
-          <div class="price">120 درهم</div>
-          <button class="btn" onclick="orderWhatsApp('سيروم تفتيح البشرة - 120 درهم')">اطلب عبر واتساب</button>
-        </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=600" loading="lazy" alt="سيروم للبشرة" onclick="openLightbox(this.src)">
+        <span class="gallery-label">عناية بالبشرة</span>
       </div>
-
-      <div class="card" data-category="oils">
-        <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=500" alt="زيت مساج للجسم">
-        <div class="card-body">
-          <h3>زيت مساج للجسم باللافندر</h3>
-          <p>استرخاء وترطيب عميق بزيوت طبيعية. 200ml</p>
-          <div class="price">95 درهم</div>
-          <button class="btn" onclick="orderWhatsApp('زيت مساج لافندر - 95 درهم')">اطلب عبر واتساب</button>
-        </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=600" loading="lazy" alt="زيوت عطرية" onclick="openLightbox(this.src)">
+        <span class="gallery-label">زيوت عطرية</span>
       </div>
-
-      <!-- ملابس جاهزة -->
-      <div class="card" data-category="clothes">
-        <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=500" alt="عباية مطرزة">
-        <div class="card-body">
-          <h3>عباية خليجية مطرزة يدوياً</h3>
-          <p>قماش كريب فاخر، تطريز يدوي. S-XXL</p>
-          <div class="price">290 درهم</div>
-          <button class="btn" onclick="orderWhatsApp('عباية مطرزة - 290 درهم')">اطلب عبر واتساب</button>
-        </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600" loading="lazy" alt="زيت جوجوبا" onclick="openLightbox(this.src)">
+        <span class="gallery-label">زيوت الشعر</span>
       </div>
-
-      <div class="card" data-category="clothes">
-        <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=500" alt="جلابية قطنية">
-        <div class="card-body">
-          <h3>جلابية قطنية صيفية</h3>
-          <p>قطن 100%، مريحة وأنيقة. كل المقاسات</p>
-          <div class="price">180 درهم</div>
-          <button class="btn" onclick="orderWhatsApp('جلابية قطنية - 180 درهم')">اطلب عبر واتساب</button>
-        </div>
+      
+      <!-- ملابس -->
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=600" loading="lazy" alt="عباية مطرزة" onclick="openLightbox(this.src)">
+        <span class="gallery-label">عبايات</span>
       </div>
-
-      <div class="card" data-category="clothes">
-        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500" alt="فستان سهرة">
-        <div class="card-body">
-          <h3>فستان سهرة شيفون</h3>
-          <p>تصميم عصري، ألوان متعددة. S-XL</p>
-          <div class="price">350 درهم</div>
-          <button class="btn" onclick="orderWhatsApp('فستان سهرة شيفون - 350 درهم')">اطلب عبر واتساب</button>
-        </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600" loading="lazy" alt="جلابية قطنية" onclick="openLightbox(this.src)">
+        <span class="gallery-label">جلابيات</span>
       </div>
-
-      <!-- مفروشات وكوفرتات -->
-      <div class="card" data-category="bedding">
-        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=500" alt="كوفرتة قطن يدوية">
-        <div class="card-body">
-          <h3>كوفرتة قطن 100% يدوية</h3>
-          <p>صناعة يدوية، قطن مصري فاخر. 220x240 سم</p>
-          <div class="price">350 درهم</div>
-          <button class="btn" onclick="orderWhatsApp('كوفرتة قطن يدوية - 350 درهم')">اطلب عبر واتساب</button>
-        </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600" loading="lazy" alt="فستان سهرة" onclick="openLightbox(this.src)">
+        <span class="gallery-label">فساتين سهرة</span>
       </div>
-
-      <div class="card" data-category="bedding">
-        <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=500" alt="طقم مفرش سرير">
-        <div class="card-body">
-          <h3>طقم مفرش سرير قطني 4 قطع</h3>
-          <p>لحاف + 2 كيس مخدة + مفرش. قطن 100%</p>
-          <div class="price">420 درهم</div>
-          <button class="btn" onclick="orderWhatsApp('طقم مفرش قطني - 420 درهم')">اطلب عبر واتساب</button>
-        </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600" loading="lazy" alt="أزياء خليجية" onclick="openLightbox(this.src)">
+        <span class="gallery-label">أزياء تراثية</span>
       </div>
-
-      <div class="card" data-category="bedding">
-        <img src="https://images.unsplash.com/photo-1522771739844-6a9f6e5a14f6?w=500" alt="بطانية شتوية">
-        <div class="card-body">
-          <h3>بطانية شتوية قطن ثقيل</h3>
-          <p>دفء ونعومة فائقة. مقاس كينج 240x260 سم</p>
-          <div class="price">280 درهم</div>
-          <button class="btn" onclick="orderWhatsApp('بطانية قطن ثقيل - 280 درهم')">اطلب عبر واتساب</button>
-        </div>
+      
+      <!-- مفروشات -->
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600" loading="lazy" alt="كوفرتة قطن" onclick="openLightbox(this.src)">
+        <span class="gallery-label">كوفرتات</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=600" loading="lazy" alt="طقم مفرش" onclick="openLightbox(this.src)">
+        <span class="gallery-label">مفارش سرير</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1522771739844-6a9f6e5a14f6?w=600" loading="lazy" alt="بطانية شتوية" onclick="openLightbox(this.src)">
+        <span class="gallery-label">بطانيات</span>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?w=600" loading="lazy" alt="مفروشات يدوية" onclick="openLightbox(this.src)">
+        <span class="gallery-label">صناعة يدوية</span>
       </div>
     </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:9999; cursor:pointer">
+    <span style="position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer">×</span>
+    <img id="lightbox-img" style="max-width:90%; max-height:90%; margin:auto; display:block; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); border-radius:8px">
   </div>
 
   <!-- الأرقام -->
