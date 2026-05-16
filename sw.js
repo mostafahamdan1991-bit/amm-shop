@@ -2,7 +2,11 @@ const CACHE_NAME = 'amm-group-v1';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/images/amm-group-logo.png'
+  '/contact.html',
+  '/b2b-register.html',
+  '/about.html',
+  '/gallery.html',
+  '/amm-group-logo.png'
 ];
 
 self.addEventListener('install', event => {
