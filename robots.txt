@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mostafahamdan1991-bit.github.io/amm-shop/sitemap.xml
