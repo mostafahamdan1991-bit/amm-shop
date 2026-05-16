@@ -3,148 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMM INTL Group | التجارة الإلكترونية الذكية في الإمارات</title>
+    <title>AMM INTL Group | التجارة الإلكترونية في الإمارات</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
-        
-        :root {
-            --primary: #0f172a;
-            --accent: #f59e0b;
-        }
-        
-        body { font-family: 'Cairo', sans-serif; margin:0; padding:0; color:#333; background:#f8fafc; line-height:1.8; }
-        nav { background: white; padding: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: sticky; top:0; z-index:100; text-align:center; }
-        nav a { margin: 0 18px; color: var(--primary); text-decoration: none; font-weight: 600; }
-        
-        header { 
-            background: linear-gradient(135deg, var(--primary), #1e40af); 
-            color: white; text-align: center; padding: 130px 20px 100px;
-        }
-        .hero { font-size: 3rem; margin: 20px 0; }
-        
-        section { padding: 90px 20px; max-width: 1300px; margin: auto; }
-        .about, .compliance { background: white; border-radius: 20px; padding: 60px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
-        
-        .model-grid, .compliance-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .whatsapp {
-            position: fixed; bottom: 20px; right: 20px;
-            background: #25D366; color: white;
-            width: 65px; height: 65px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 28px; box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            z-index: 1000; text-decoration: none;
-        }
-        footer { background: var(--primary); color: white; text-align: center; padding: 60px 20px; }
+        :root { --primary: #0f172a; --accent: #f59e0b; }
+        body { font-family: 'Cairo', sans-serif; margin:0; padding:0; color:#333; background:#f8fafc; }
+        nav { background: white; padding: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align:center; }
+        nav a { margin: 0 15px; color: var(--primary); text-decoration: none; font-weight: 600; }
+        header { background: linear-gradient(135deg, var(--primary), #1e40af); color: white; text-align: center; padding: 160px 20px; }
+        .hero { font-size: 3.2rem; margin: 20px 0; }
+        .btn { background: var(--accent); color: white; padding: 16px 40px; border-radius: 50px; text-decoration: none; font-size: 1.2rem; }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#home">الرئيسية</a>
-        <a href="#about">عن المجموعة</a>
-        <a href="#model">نموذج أعمالنا</a>
-        <a href="#compliance">الأمان والامتثال</a>
-        <a href="#contact">اتصل بنا</a>
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">عن المجموعة</a>
+        <a href="business-model.html">نموذج أعمالنا</a>
+        <a href="compliance.html">الأمان والامتثال</a>
+        <a href="contact.html">اتصل بنا</a>
     </nav>
 
-    <header id="home">
+    <header>
         <h1 class="hero">AMM INTL Group</h1>
-        <p style="font-size:1.7rem; max-width:900px; margin:auto;">
-            من الاستشارات التجارية إلى ريادة التجارة الإلكترونية في الإمارات والخليج
-        </p>
+        <p style="font-size:1.8rem;">ريادة التجارة الإلكترونية في الإمارات والخليج</p>
+        <a href="about.html" class="btn">تعرف علينا</a>
     </header>
 
-    <!-- عن الشركة -->
-    <section id="about">
-        <div class="about">
-            <h2 style="text-align:center; font-size:2.6rem; margin-bottom:40px;">من عراقة الاستشارات إلى ريادة الفضاء الرقمي</h2>
-            <p style="font-size:1.25rem;">
-                تأسست مجموعة إي إم إم العالمية (AMM INTL Group) لتكون جسرًا يربط بين الأسواق التقليدية والآفاق اللامتناهية للتجارة الرقمية الحديثة. 
-                بدأت هذه الرحلة من واقع خبرة مؤسسية صلبة تمتد لأكثر من <strong>20 عاماً</strong> في مجالات الاستشارات المالية، التجارة الدولية، وتطوير الأعمال.
-            </p>
-            <p style="font-size:1.25rem; margin-top:25px;">
-                وفي عام 2024، ومن قلب دولة الإمارات العربية المتحدة، اتخذت المجموعة قراراً إستراتيجياً بالتحول الكامل والتركيز الحصري على قطاع التجارة الإلكترونية وحلول الأسواق الرقمية.
-            </p>
-        </div>
-    </section>
-
-    <!-- نموذج العمل -->
-    <section id="model" style="background:#f1f5f9;">
-        <h2 style="text-align:center; font-size:2.5rem; margin-bottom:50px;">نموذج أعمالنا الرباعي</h2>
-        <div class="model-grid">
-            <div class="card"><h3>B2B</h3><p>حلول الشركات والتوريد بالجملة</p></div>
-            <div class="card"><h3>B2C</h3><p>تجربة تسوق استثنائية للمستهلك</p></div>
-            <div class="card"><h3>Marketplace</h3><p>منصة مفتوحة للتجار</p></div>
-            <div class="card"><h3>Cross-Border</h3><p>التجارة عابرة الحدود</p></div>
-        </div>
-    </section>
-
-    <!-- قسم الأمان والامتثال الجديد -->
-    <section id="compliance">
-        <div class="compliance">
-            <h2 style="text-align:center; font-size:2.5rem; margin-bottom:40px;">الأمان والامتثال الرقمي</h2>
-            <p style="font-size:1.25rem; text-align:center; max-width:900px; margin:auto;">
-                نلتزم في AMM INTL Group بأعلى معايير الامتثال والحوكمة الرقمية العالمية لحماية عملائنا وشركائنا.
-            </p>
-            
-            <div class="compliance-grid" style="margin-top:50px;">
-                <div class="card">
-                    <h3>🔒 حماية البيانات</h3>
-                    <p>تشفير فائق الجودة وفق معايير PCI-DSS لحماية بياناتك وبطاقاتك الائتمانية</p>
-                </div>
-                <div class="card">
-                    <h3>🛡️ مكافحة غسيل الأموال</h3>
-                    <p>التزام كامل بقوانين AML و CFT الدولية</p>
-                </div>
-                <div class="card">
-                    <h3>📋 الامتثال القانوني</h3>
-                    <p>تخضع جميع عملياتنا للرقابة والتفتيش لضمان بيئة تجارية آمنة ونظيفة</p>
-                </div>
-                <div class="card">
-                    <h3>🛡️ أمان سيبراني</h3>
-                    <p>أحدث التقنيات للحماية من الهجمات الإلكترونية</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" style="background:var(--primary); color:white;">
-        <h2 style="text-align:center; color:white;">جاهز تبدأ مشروعك الإلكتروني؟</h2>
-        <form id="orderForm" style="max-width:700px; margin:auto;">
-            <input type="text" placeholder="الاسم الكامل" required style="width:100%; padding:15px; margin:12px 0; border-radius:8px;">
-            <input type="tel" placeholder="رقم الواتساب" required style="width:100%; padding:15px; margin:12px 0; border-radius:8px;">
-            <textarea placeholder="اكتب تفاصيل طلبك أو مشروعك" rows="6" style="width:100%; padding:15px; margin:12px 0; border-radius:8px;"></textarea>
-            <button type="submit" class="btn" style="width:100%; padding:18px; font-size:1.2rem; background:#f59e0b;">إرسال الطلب</button>
-        </form>
-    </section>
-
-    <a href="https://wa.me/971507737955" class="whatsapp" target="_blank">💬</a>
-
-    <footer>
+    <footer style="background:var(--primary); color:white; text-align:center; padding:50px; margin-top:50px;">
         <p><strong>AMM International Trading and Banking Consultancy and Solutions FZC LLC</strong></p>
         <p>Sharjah Publishing City Free Zone - الإمارات العربية المتحدة</p>
         <p>© 2026 - جميع الحقوق محفوظة</p>
     </footer>
-
-    <script>
-        document.getElementById('orderForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('✅ تم استلام طلبك بنجاح!\nسنتواصل معك خلال دقائق عبر الواتساب');
-            this.reset();
-        });
-    </script>
 </body>
 </html>
