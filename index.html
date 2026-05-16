@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMM Shop - متجر إلكتروني الإمارات</title>
+    <title>AMM Shop - متجر إلكتروني | الإمارات</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
         
@@ -13,17 +13,23 @@
         }
         
         body { font-family: 'Cairo', sans-serif; margin:0; padding:0; color:#333; background:#f8fafc; }
-        nav { background: white; padding: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: sticky; top:0; z-index:100; text-align:center; }
-        nav a { margin: 0 15px; color: var(--primary); text-decoration: none; font-weight: 600; }
+        nav { background: white; padding: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: sticky; top:0; z-index:100; text-align:center; }
+        nav a { margin: 0 18px; color: var(--primary); text-decoration: none; font-weight: 600; }
         
         header { 
             background: linear-gradient(135deg, var(--primary), #1e40af); 
-            color: white; text-align: center; padding: 100px 20px;
+            color: white; text-align: center; padding: 110px 20px;
         }
         .hero { font-size: 2.8rem; margin: 20px 0; }
-        .btn { background: var(--accent); color: white; padding: 14px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; cursor: pointer; }
+        .btn { 
+            background: var(--accent); color: white; 
+            padding: 15px 40px; border-radius: 50px; 
+            text-decoration: none; font-weight: bold; 
+        }
         
-        section { padding: 70px 20px; max-width: 1200px; margin: auto; }
+        section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+        .about { background: white; border-radius: 16px; padding: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -36,200 +42,104 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
             padding-bottom: 20px;
-            transition: 0.3s;
         }
-        .product:hover { transform: translateY(-10px); }
         .product img { width: 100%; height: 220px; object-fit: cover; }
         
-        .cart-icon {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            background: var(--accent);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            cursor: pointer;
-            z-index: 1000;
-        }
         .whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            z-index: 1000;
-            text-decoration: none;
+            position: fixed; bottom: 20px; right: 20px;
+            background: #25D366; color: white;
+            width: 65px; height: 65px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 28px; box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 1000; text-decoration: none;
         }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-        }
-        .modal-content {
-            background: white;
-            padding: 25px;
-            border-radius: 16px;
-            width: 90%;
-            max-width: 500px;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
+        footer { background: var(--primary); color: white; text-align: center; padding: 50px 20px; }
     </style>
 </head>
 <body>
 
     <nav>
         <a href="#home">الرئيسية</a>
+        <a href="#about">عن الشركة</a>
         <a href="#products">المنتجات</a>
-        <a href="#contact">طلب الآن</a>
+        <a href="#contact">اتصل بنا</a>
     </nav>
 
     <header id="home">
         <h1 class="hero">AMM Shop</h1>
-        <p style="font-size:1.6rem;">متجر إلكتروني متكامل في الإمارات</p>
+        <p style="font-size:1.6rem; max-width:800px; margin:auto;">
+            حلول التجارة الإلكترونية المتكاملة في الإمارات العربية المتحدة
+        </p>
         <a href="#products" class="btn">تسوق الآن</a>
     </header>
 
+    <!-- قسم عن الشركة الاحترافي -->
+    <section id="about">
+        <div class="about">
+            <h2 style="text-align:center; font-size:2.4rem; margin-bottom:30px;">عن AMM International</h2>
+            <p style="font-size:1.25rem; line-height:1.8;">
+                <strong>AMM International Trading and Banking Consultancy and Solutions FZC LLC</strong> 
+                هي شركة مقرها في <strong>الإمارات العربية المتحدة</strong> (منطقة شارقة للنشر الحر)، متخصصة في تقديم حلول تجارية ومصرفية متكاملة.
+            </p>
+            <p style="font-size:1.25rem; line-height:1.8; margin-top:20px;">
+                نركز بشكل أساسي على <strong>التجارة الإلكترونية</strong> حيث نقدم خدمات متكاملة من تصميم المتاجر الإلكترونية مروراً بتوريد المنتجات وصولاً إلى التسويق الرقمي والشحن.
+            </p>
+            
+            <h3 style="margin-top:40px;">رؤيتنا</h3>
+            <p>أن نصبح الشريك الأول لكل رائد أعمال يرغب في النجاح في سوق الإمارات والخليج من خلال التجارة الإلكترونية.</p>
+        </div>
+    </section>
+
     <section id="products">
-        <h2 style="text-align:center; font-size:2.4rem; margin-bottom:40px;">منتجاتنا</h2>
+        <h2 style="text-align:center; font-size:2.4rem; margin-bottom:40px;">منتجات مميزة</h2>
         <div class="product-grid" id="productGrid"></div>
     </section>
 
     <section id="contact" style="background:var(--primary); color:white;">
-        <h2 style="text-align:center; color:white;">اطلب منتجك الآن</h2>
+        <h2 style="text-align:center; color:white;">ابدأ مشروعك الإلكتروني الآن</h2>
         <form id="orderForm" style="max-width:600px; margin:auto;">
-            <input type="text" placeholder="اسمك" required style="width:100%; padding:12px; margin:10px 0; border-radius:8px;">
-            <input type="tel" placeholder="رقم الواتساب" required style="width:100%; padding:12px; margin:10px 0; border-radius:8px;">
-            <textarea placeholder="اكتب المنتجات المطلوبة" rows="5" style="width:100%; padding:12px; margin:10px 0; border-radius:8px;"></textarea>
-            <button type="submit" class="btn" style="width:100%;">إرسال الطلب</button>
+            <input type="text" placeholder="الاسم الكامل" required style="width:100%; padding:14px; margin:10px 0; border-radius:8px;">
+            <input type="tel" placeholder="رقم الواتساب" required style="width:100%; padding:14px; margin:10px 0; border-radius:8px;">
+            <textarea placeholder="وصف الطلب أو المنتجات المطلوبة" rows="5" style="width:100%; padding:14px; margin:10px 0; border-radius:8px;"></textarea>
+            <button type="submit" class="btn" style="width:100%; padding:16px;">إرسال الطلب</button>
         </form>
     </section>
 
-    <!-- زر واتساب -->
+    <!-- واتساب ثابت -->
     <a href="https://wa.me/971507737955" class="whatsapp" target="_blank">💬</a>
-    
-    <!-- أيقونة العربة -->
-    <div class="cart-icon" id="cartIcon">🛒 <span id="cartCount">0</span></div>
 
-    <!-- Modal عربة التسوق -->
-    <div class="modal" id="cartModal">
-        <div class="modal-content">
-            <h2>عربة التسوق</h2>
-            <div id="cartItems"></div>
-            <h3>الإجمالي: <span id="cartTotal">0</span> درهم</h3>
-            <button class="btn" onclick="checkout()">إتمام الشراء عبر الواتساب</button>
-            <button onclick="closeCart()" style="margin-top:10px; background:#ccc;">إغلاق</button>
-        </div>
-    </div>
-
-    <footer style="background:#0f172a; color:white; text-align:center; padding:40px;">
-        <p>© 2026 AMM International - الإمارات العربية المتحدة</p>
+    <footer>
+        <p><strong>AMM International Trading and Banking Consultancy and Solutions FZC LLC</strong></p>
+        <p>Sharjah Publishing City Free Zone - الإمارات العربية المتحدة</p>
+        <p>© 2026 - جميع الحقوق محفوظة</p>
     </footer>
 
     <script>
-        // بيانات المنتجات
         const products = [
-            { id:1, name:"سيارة تويوتا كامري 2024", price:125000, img:"https://via.placeholder.com/300x220?text=Toyota+Camry" },
-            { id:2, name:"ايفون 16 برو", price:4200, img:"https://via.placeholder.com/300x220?text=iPhone+16" },
-            { id:3, name:"لاب توب ديل XPS", price:5200, img:"https://via.placeholder.com/300x220?text=Dell+Laptop" },
-            { id:4, name:"ثلاجة سامسونج", price:2850, img:"https://via.placeholder.com/300x220?text=Refrigerator" },
+            { name:"سيارة تويوتا كامري 2024", price:125000, img:"https://via.placeholder.com/300x220/0f172a/white?text=Toyota+Camry" },
+            { name:"ايفون 16 برو ماكس", price:5200, img:"https://via.placeholder.com/300x220/0f172a/white?text=iPhone+16+Pro" },
+            { name:"لاب توب ديل XPS 13", price:5800, img:"https://via.placeholder.com/300x220/0f172a/white?text=Dell+XPS" },
+            { name:"ثلاجة سامسونج كبيرة", price:3200, img:"https://via.placeholder.com/300x220/0f172a/white?text=Refrigerator" },
         ];
-
-        let cart = [];
 
         function renderProducts() {
             const grid = document.getElementById('productGrid');
-            grid.innerHTML = '';
-            products.forEach(product => {
-                const div = document.createElement('div');
-                div.className = 'product';
-                div.innerHTML = `
-                    <img src="${product.img}" alt="${product.name}">
-                    <h3>${product.name}</h3>
-                    <p><strong>${product.price} درهم</strong></p>
-                    <button class="btn" onclick="addToCart(${product.id})">أضف للعربة</button>
-                `;
-                grid.appendChild(div);
-            });
+            grid.innerHTML = products.map(p => `
+                <div class="product">
+                    <img src="${p.img}" alt="${p.name}">
+                    <h3>${p.name}</h3>
+                    <p><strong>${p.price.toLocaleString()} درهم</strong></p>
+                    <button class="btn" onclick="alert('تم إضافة ${p.name} إلى العربة (سيتم التطوير قريباً)')">أضف للعربة</button>
+                </div>
+            `).join('');
         }
 
-        function addToCart(id) {
-            const product = products.find(p => p.id === id);
-            cart.push(product);
-            updateCartCount();
-            alert(`✅ تم إضافة ${product.name} للعربة`);
-        }
-
-        function updateCartCount() {
-            document.getElementById('cartCount').textContent = cart.length;
-        }
-
-        function showCart() {
-            const modal = document.getElementById('cartModal');
-            const itemsDiv = document.getElementById('cartItems');
-            let total = 0;
-            itemsDiv.innerHTML = '';
-            
-            cart.forEach((item, index) => {
-                total += item.price;
-                itemsDiv.innerHTML += `<p>${item.name} - ${item.price} درهم <button onclick="removeFromCart(${index})">حذف</button></p>`;
-            });
-            
-            document.getElementById('cartTotal').textContent = total;
-            modal.style.display = 'flex';
-        }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            showCart();
-            updateCartCount();
-        }
-
-        function closeCart() {
-            document.getElementById('cartModal').style.display = 'none';
-        }
-
-        function checkout() {
-            if (cart.length === 0) return alert("العربة فارغة");
-            let message = "مرحبا، عندي طلب من AMM Shop:%0A";
-            cart.forEach(item => {
-                message += `- ${item.name} (${item.price} درهم)%0A`;
-            });
-            message += `%0Aالإجمالي: ${cart.reduce((a,b)=>a+b.price,0)} درهم`;
-            window.open(`https://wa.me/971507737955?text=${message}`, '_blank');
-        }
-
-        // نموذج الطلب
         document.getElementById('orderForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('✅ تم استلام طلبك! سنتواصل معك قريباً عبر الواتساب');
+            alert('✅ تم استلام طلبك بنجاح!\nسنتواصل معك خلال دقائق عبر الواتساب');
             this.reset();
         });
 
-        // فتح العربة
-        document.getElementById('cartIcon').addEventListener('click', showCart);
-
-        // تشغيل الموقع
         renderProducts();
     </script>
 </body>
