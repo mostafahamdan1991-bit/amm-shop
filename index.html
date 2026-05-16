@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMM Shop - متجر إلكتروني | الإمارات</title>
+    <title>AMM Shop - متجر إلكتروني في الإمارات</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
         
@@ -12,46 +12,44 @@
             --accent: #f59e0b;
         }
         
-        body { 
-            font-family: 'Cairo', sans-serif; 
-            margin: 0; padding: 0; 
-            color: #333; 
-        }
+        body { font-family: 'Cairo', sans-serif; margin:0; padding:0; color:#333; }
         header { 
-            background: linear-gradient(135deg, var(--primary), #1e3a8a); 
+            background: linear-gradient(135deg, var(--primary), #1e40af); 
             color: white; 
             text-align: center; 
-            padding: 120px 20px 80px;
+            padding: 80px 20px 60px;
         }
-        nav {
-            background: white;
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        nav { 
+            background: white; 
+            padding: 15px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            position: sticky; top:0; z-index:100;
         }
-        .hero { font-size: 2.8rem; margin: 20px 0; }
-        .btn {
-            background: var(--accent);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            display: inline-block;
-            margin-top: 20px;
+        nav a { margin: 0 15px; color: var(--primary); text-decoration: none; font-weight: 600; }
+        
+        .logo { max-height: 90px; margin-bottom: 15px; }
+        .hero { font-size: 2.6rem; margin: 20px 0; }
+        .btn { 
+            background: var(--accent); color: white; 
+            padding: 14px 35px; border-radius: 50px; 
+            text-decoration: none; font-weight: bold; 
         }
-        section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+        section { padding: 70px 20px; max-width: 1200px; margin: auto; }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
         .product {
             background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
-            margin: 15px;
+            padding-bottom: 20px;
         }
-        footer { background: var(--primary); color: white; text-align: center; padding: 60px 20px; }
+        .product img { width: 100%; height: 220px; object-fit: cover; }
+        .cart { position: fixed; bottom: 20px; right: 20px; background: var(--accent); color: white; padding: 15px 20px; border-radius: 50px; cursor: pointer; box-shadow: 0 5px 20px rgba(0,0,0,0.2); }
     </style>
 </head>
 <body>
@@ -59,50 +57,62 @@
     <nav>
         <a href="#home">الرئيسية</a>
         <a href="#products">المنتجات</a>
-        <a href="#services">خدماتنا</a>
+        <a href="#services">خدمات E-commerce</a>
         <a href="#contact">اتصل بنا</a>
     </nav>
 
     <header id="home">
+        <!-- اللوجو هيظهر هنا بعد ما ترفعه -->
+        <img src="logo.png" alt="AMM Shop Logo" class="logo"> <!-- غير الاسم لو مختلف -->
         <h1 class="hero">AMM Shop</h1>
-        <p style="font-size:1.6rem;">متجرك الإلكتروني المتكامل في الإمارات</p>
-        <a href="#products" class="btn">تسوق الآن</a>
+        <p style="font-size:1.5rem;">متجر إلكتروني متكامل - الإمارات العربية المتحدة</p>
+        <a href="#products" class="btn">ابدأ التسوق</a>
     </header>
 
-    <section id="products" style="background:#f8fafc;">
-        <h2 style="text-align:center; font-size:2.3rem;">منتجاتنا</h2>
-        <div style="display:flex; flex-wrap:wrap; justify-content:center;">
+    <section id="products">
+        <h2 style="text-align:center; font-size:2.4rem; margin-bottom:40px;">منتجات مميزة</h2>
+        <div class="product-grid">
             <div class="product">
-                <h3>سيارات</h3>
-                <p>جديدة ومستعملة</p>
+                <h3>سيارات جديدة ومستعملة</h3>
+                <p>بأفضل الأسعار في الإمارات</p>
             </div>
             <div class="product">
-                <h3>إلكترونيات</h3>
-                <p>هواتف - لاب توب - أجهزة</p>
+                <h3>إلكترونيات وهواتف</h3>
+                <p>أحدث الموديلات</p>
             </div>
             <div class="product">
                 <h3>مستلزمات منزلية</h3>
-                <p>بأسعار تنافسية</p>
+                <p>جودة عالية</p>
             </div>
         </div>
     </section>
 
-    <section id="services">
-        <h2 style="text-align:center;">خدمات التجارة الإلكترونية</h2>
-        <p style="text-align:center; font-size:1.3rem;">تصميم متجر • توريد بضائع • تسويق • شحن داخل الإمارات والخليج</p>
+    <section id="services" style="background:#f8fafc;">
+        <h2 style="text-align:center;">خدماتنا في التجارة الإلكترونية</h2>
+        <ul style="font-size:1.2rem; line-height:2.2;">
+            <li>تصميم وتطوير متاجر إلكترونية احترافية</li>
+            <li>توريد وبيع المنتجات</li>
+            <li>التسويق الرقمي (إعلانات + SEO)</li>
+            <li>الشحن واللوجستيات داخل الإمارات والخليج</li>
+        </ul>
     </section>
 
     <section id="contact" style="background:var(--primary); color:white;">
-        <h2 style="text-align:center; color:white;">تواصل معنا لبدء مشروعك</h2>
+        <h2 style="text-align:center; color:white;">تواصل معنا الآن</h2>
         <p style="text-align:center; font-size:1.4rem;">
             📞 +971 50 773 7955<br>
+            📞 +971 50 697 2088<br>
             📧 info@ammintlgroup.com<br><br>
-            Sharjah Publishing City Free Zone - الإمارات
+            <strong>Sharjah Publishing City Free Zone - الإمارات</strong>
         </p>
     </section>
 
-    <footer>
-        <p>© 2026 AMM International - جميع الحقوق محفوظة</p>
+    <div class="cart" onclick="alert('عربة التسوق - سيتم تفعيلها قريباً')">
+        🛒 عربة التسوق (0)
+    </div>
+
+    <footer style="background:#0f172a; color:white; text-align:center; padding:40px;">
+        <p>© 2026 AMM International - الإمارات العربية المتحدة</p>
     </footer>
 
 </body>
