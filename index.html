@@ -29,7 +29,7 @@
     /* Sections */
     .container{max-width:1200px; margin:60px auto; padding:0 20px}
     .section-title{text-align:center; font-size:32px; color:#0d47a1; margin-bottom:15px}
-    .section-sub{ text-align:center; color:#666; margin-bottom:40px; font-size:18px}
+    .section-sub{text-align:center; color:#666; margin-bottom:40px; font-size:18px}
     
     /* Features */
     .features{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; margin:40px 0}
@@ -52,6 +52,13 @@
     .btn{background:#25D366; color:white; padding:12px; width:100%; border:none; border-radius:6px; cursor:pointer; font-family:'Cairo'; font-size:16px; font-weight:600}
     .btn:hover{background:#1da851}
 
+    /* Gallery - صورتين فقط متناسقين */
+    .gallery-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:30px; margin:40px 0}
+    .gallery-item{position:relative; overflow:hidden; border-radius:12px; cursor:pointer; height:400px; box-shadow:0 4px 20px rgba(0,0,0,0.12)}
+    .gallery-item img{width:100%; height:100%; object-fit:cover; transition:0.5s}
+    .gallery-item:hover img{transform:scale(1.1)}
+    .gallery-label{position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(13,71,161,0.95)); color:white; padding:25px 20px 20px; font-weight:700; font-size:18px; text-align:center}
+
     /* Stats */
     .stats{background:#0d47a1; color:white; padding:60px 20px; text-align:center}
     .stats-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:35px; max-width:1000px; margin:auto}
@@ -68,28 +75,12 @@
       .hero h1{font-size:26px}
       nav .wrap{justify-content:center; gap:15px}
       .hero-btn{display:block; margin:10px auto; max-width:250px}
+      .gallery-grid{grid-template-columns:1fr; gap:20px}
+      .gallery-item{height:300px}
     }
-  </style>/* Gallery */
-    .gallery-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px; margin:40px 0}
-    .gallery-item{position:relative; overflow:hidden; border-radius:12px; cursor:pointer; height:300px; box-shadow:0 4px 15px rgba(0,0,0,0.1)}
-    .gallery-item img{width:100%; height:100%; object-fit:cover; transition:0.5s}
-    .gallery-item:hover img{transform:scale(1.15)}
-    .gallery-label{position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.8)); color:white; padding:20px 15px 15px; font-weight:600; font-size:15px}
-    
-    @media(max-width:768px){
-      .gallery-grid{grid-template-columns:repeat(2,1fr); gap:12px}
-      .gallery-item{height:200px}
-    }
+  </style>
 </head>
-<body>function openLightbox(src) {
-      document.getElementById('lightbox').style.display = 'block';
-      document.getElementById('lightbox-img').src = src;
-      document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
+<body>
   <!-- Nav -->
   <nav>
     <div class="wrap">
@@ -142,64 +133,19 @@
     </div>
   </div>
 
-  <!-- معرض الصور الجاهز -->
+  <!-- معرض الصور - صورتين فقط -->
   <div class="container" id="gallery">
-    <h2 class="section-title">معرض منتجات AMM INTL</h2>
-    <p class="section-sub">زيوت طبيعية • ملابس فاخرة • مفروشات قطنية 100%</p>
+    <h2 class="section-title">أقسام منتجاتنا</h2>
+    <p class="section-sub">جودة طبيعية 100% • صناعة يدوية فاخرة</p>
     
     <div class="gallery-grid">
-      <!-- زيوت طبيعية -->
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600" loading="lazy" alt="زيت أرغان طبيعي" onclick="openLightbox(this.src)">
-        <span class="gallery-label">زيوت طبيعية</span>
+        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800" loading="lazy" alt="تركيبات زيوت طبيعية للشعر والبشرة" onclick="openLightbox(this.src)">
+        <span class="gallery-label">تركيبات زيوت طبيعية 100%</span>
       </div>
       <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=600" loading="lazy" alt="سيروم للبشرة" onclick="openLightbox(this.src)">
-        <span class="gallery-label">عناية بالبشرة</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=600" loading="lazy" alt="زيوت عطرية" onclick="openLightbox(this.src)">
-        <span class="gallery-label">زيوت عطرية</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600" loading="lazy" alt="زيت جوجوبا" onclick="openLightbox(this.src)">
-        <span class="gallery-label">زيوت الشعر</span>
-      </div>
-      
-      <!-- ملابس -->
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=600" loading="lazy" alt="عباية مطرزة" onclick="openLightbox(this.src)">
-        <span class="gallery-label">عبايات</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600" loading="lazy" alt="جلابية قطنية" onclick="openLightbox(this.src)">
-        <span class="gallery-label">جلابيات</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600" loading="lazy" alt="فستان سهرة" onclick="openLightbox(this.src)">
-        <span class="gallery-label">فساتين سهرة</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600" loading="lazy" alt="أزياء خليجية" onclick="openLightbox(this.src)">
-        <span class="gallery-label">أزياء تراثية</span>
-      </div>
-      
-      <!-- مفروشات -->
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600" loading="lazy" alt="كوفرتة قطن" onclick="openLightbox(this.src)">
-        <span class="gallery-label">كوفرتات</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=600" loading="lazy" alt="طقم مفرش" onclick="openLightbox(this.src)">
-        <span class="gallery-label">مفارش سرير</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1522771739844-6a9f6e5a14f6?w=600" loading="lazy" alt="بطانية شتوية" onclick="openLightbox(this.src)">
-        <span class="gallery-label">بطانيات</span>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?w=600" loading="lazy" alt="مفروشات يدوية" onclick="openLightbox(this.src)">
-        <span class="gallery-label">صناعة يدوية</span>
+        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800" loading="lazy" alt="مفروشات وكوفرتات قطن يدوية" onclick="openLightbox(this.src)">
+        <span class="gallery-label">مفروشات قطنية يدوية</span>
       </div>
     </div>
   </div>
@@ -242,7 +188,7 @@
       <a href="/amm-shop/contact.html">تواصل معنا</a>
     </div>
     <p>© 2026 AMM INTL Group. جميع الحقوق محفوظة</p>
-    <p style="margin-top:10px; font-size:14px">أم القيوين، الإمارات العربية المتحدة | واتساب: +971 50 812 8499 </p>
+    <p style="margin-top:10px; font-size:14px">أم القيوين، الإمارات العربية المتحدة | واتساب: +971 50 812 8499</p>
   </footer>
 
   <script>
@@ -262,9 +208,20 @@
     }
 
     function orderWhatsApp(product) {
-      const number = '971529975410'; // ⚠️ مهم: غيّر ده لرقمك بدون + أو 00971529975410
+      const number = '971508128499';
       const message = `مرحبا AMM INTL Group، أريد طلب: ${product}`;
       window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    function openLightbox(src) {
+      document.getElementById('lightbox').style.display = 'block';
+      document.getElementById('lightbox-img').src = src;
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+      document.body.style.overflow = 'auto';
     }
   </script>
 </body>
