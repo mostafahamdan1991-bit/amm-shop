@@ -9,12 +9,12 @@
         :root {
             --primary: #0f172a;
             --accent: #f59e0b;
-            --light: #f8f9fa;
+            --light-blue: #f0f4ff;
         }
         body { 
             font-family: 'Cairo', sans-serif; 
             margin:0; padding:0; 
-            background: var(--light); 
+            background: var(--light-blue); 
             color:#333; 
             line-height:1.8;
         }
@@ -28,37 +28,46 @@
         nav a { margin: 0 18px; color: var(--primary); text-decoration: none; font-weight: 600; }
         
         .hero { 
-            background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)), url('https://via.placeholder.com/1920x1080/0f172a/ffffff?text=Global+E-commerce+Network') center/cover no-repeat;
+            background: linear-gradient(135deg, #0f172a, #1e3a8a); 
             color: white; 
             text-align: center; 
-            padding: 180px 20px 120px;
+            padding: 180px 20px 140px;
         }
         .hero h1 { font-size: 3.4rem; margin: 20px 0; }
-        .hero p { font-size: 1.5rem; max-width: 900px; margin: 0 auto 40px; }
+        .hero p { font-size: 1.55rem; max-width: 950px; margin: 0 auto 40px; }
+        
         .btn { 
             background: var(--accent); 
             color: white; 
-            padding: 16px 40px; 
+            padding: 16px 42px; 
             border-radius: 50px; 
             text-decoration: none; 
             font-size: 1.2rem; 
             margin: 10px;
             display: inline-block;
+            font-weight: 600;
         }
 
         section { padding: 100px 20px; max-width: 1300px; margin: auto; }
         .section-title { text-align:center; font-size:2.6rem; margin-bottom:60px; color: var(--primary); }
 
         .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card { background: white; padding: 40px 25px; border-radius: 20px; box-shadow: 0 10px 35px rgba(0,0,0,0.08); text-align: center; transition: 0.3s; }
-        .card:hover { transform: translateY(-15px); }
+        .card { 
+            background: white; 
+            padding: 40px 25px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 35px rgba(0,0,0,0.1); 
+            text-align: center; 
+            transition: 0.3s; 
+        }
+        .card:hover { transform: translateY(-12px); }
 
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; text-align:center; }
-        .stat-number { font-size: 3.5rem; font-weight: 700; color: var(--accent); }
-
-        .categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-        
-        footer { background: var(--primary); color: white; text-align: center; padding: 80px 20px; }
+        footer { 
+            background: var(--primary); 
+            color: white; 
+            text-align: center; 
+            padding: 80px 20px; 
+        }
     </style>
 </head>
 <body>
@@ -81,86 +90,25 @@
         </div>
     </section>
 
-    <!-- نموذج العمل الرباعي -->
+    <!-- باقي الأقسام -->
     <section>
         <h2 class="section-title">نموذج أعمالنا الرباعي</h2>
         <div class="grid-4">
-            <div class="card">
-                <h3>B2B</h3>
-                <p>حلول الشركات والتوريدات بالجملة مع تسهيلات دفع ائتمانية وإدارة التخليص الجمركي.</p>
-            </div>
-            <div class="card">
-                <h3>B2C</h3>
-                <p>تجربة تسوق استثنائية للمستهلك النهائي مع منتجات أصلية وتوصيل سريع.</p>
-            </div>
-            <div class="card">
-                <h3>Marketplace</h3>
-                <p>منصة مفتوحة للتجار مع لوحة تحكم ذكية وخدمات Fulfilled by AMM.</p>
-            </div>
-            <div class="card">
-                <h3>Cross-Border</h3>
-                <p>التجارة عابرة الحدود — تصدير واستيراد رقمي بكفاءة عالمية.</p>
-            </div>
+            <div class="card"><h3>B2B</h3><p>حلول الشركات والتوريدات بالجملة</p></div>
+            <div class="card"><h3>B2C</h3><p>تجربة تسوق استثنائية للمستهلك</p></div>
+            <div class="card"><h3>Marketplace</h3><p>منصة مفتوحة للتجار</p></div>
+            <div class="card"><h3>Cross-Border</h3><p>التجارة عابرة الحدود</p></div>
         </div>
     </section>
 
-    <!-- إحصائيات -->
     <section style="background:white;">
         <h2 class="section-title">أرقامنا تتحدث عنا</h2>
-        <div class="stats">
-            <div>
-                <div class="stat-number">20+</div>
-                <p>عاماً من الخبرة المؤسسية</p>
-            </div>
-            <div>
-                <div class="stat-number">40%+</div>
-                <p>زيادة في تفاعل العملاء</p>
-            </div>
-            <div>
-                <div class="stat-number">25%+</div>
-                <p>معدل إتمام الشراء</p>
-            </div>
-            <div>
-                <div class="stat-number">50+</div>
-                <p>دولة نغطيها لوجستياً</p>
-            </div>
+        <div class="grid-4" style="text-align:center;">
+            <div><h3 style="font-size:3rem; color:#f59e0b;">20+</h3><p>عام خبرة مؤسسية</p></div>
+            <div><h3 style="font-size:3rem; color:#f59e0b;">40%+</h3><p>زيادة تفاعل العملاء</p></div>
+            <div><h3 style="font-size:3rem; color:#f59e0b;">25%+</h3><p>معدل إتمام الشراء</p></div>
+            <div><h3 style="font-size:3rem; color:#f59e0b;">50+</h3><p>دولة لوجستياً</p></div>
         </div>
-    </section>
-
-    <!-- الفئات الرئيسية -->
-    <section>
-        <h2 class="section-title">عوالمنا التجارية</h2>
-        <div class="categories">
-            <div class="card">
-                <h3>💎 الفخامة والأزياء</h3>
-                <p>أرقى العلامات العالمية مع تجربة تسوق فاخرة وتغليف مميز.</p>
-            </div>
-            <div class="card">
-                <h3>⚡ الإلكترونيات والتقنية</h3>
-                <p>أحدث التقنيات مباشرة من المصانع مع ضمانات شاملة.</p>
-            </div>
-            <div class="card">
-                <h3>📦 التجارة العامة</h3>
-                <p>كل ما تحتاجه للحياة اليومية والأعمال في مكان واحد.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- شريط الثقة -->
-    <section style="background:#0f172a; color:white; text-align:center;">
-        <h2 style="margin-bottom:30px;">التزام مطلق بالأمان والامتثال</h2>
-        <p style="max-width:900px; margin:auto; font-size:1.2rem;">
-            نطبق أعلى معايير الحماية العالمية (PCI-DSS) ومكافحة غسيل الأموال (AML) لضمان بيئة تجارية آمنة وموثوقة 100%.
-        </p>
-    </section>
-
-    <!-- CTA ختامي -->
-    <section style="text-align:center; background:white;">
-        <h2 style="font-size:2.4rem;">هل أنت مستعد للانطلاق؟</h2>
-        <p style="font-size:1.3rem; max-width:700px; margin:20px auto;">
-            انضم إلى مجموعة إي إم إم العالمية وكن جزءاً من مستقبل التجارة الرقمية في المنطقة.
-        </p>
-        <a href="contact.html" class="btn">ابدأ الآن - تواصل معنا</a>
     </section>
 
     <footer>
