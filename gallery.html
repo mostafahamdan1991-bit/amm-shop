@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>معرض الصور | AMM Group</title>
+  
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#D4AF37">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="AMM Group">
+  <link rel="apple-touch-icon" href="amm-group-logo-192.png">
+  
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     *{margin:0; padding:0; box-sizing:border-box}
@@ -32,7 +41,7 @@
   <nav>
     <div class="wrap">
       <div class="logo">
-        <img src="images/amm-group-logo.png" alt="AMM Group">
+        <img src="amm-group-logo.png" alt="AMM Group">
         <h2>AMM Group</h2>
       </div>
       <div class="links">
@@ -74,5 +83,11 @@
     <p>© 2026 AMM Group. جميع الحقوق محفوظة</p>
     <p style="margin-top:10px; font-size:14px">أم القيوين، الإمارات العربية المتحدة | واتساب: +971 50 812 8499</p>
   </footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
 </body>
 </html>
