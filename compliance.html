@@ -3,40 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الأمان والامتثال - AMM INTL Group</title>
+    <title>نموذج أعمالنا - AMM INTL Group</title>
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
-    :root {
-        --primary: #0f172a;
-        --accent: #f59e0b;
-        --light: #f8f9fa;
-    }
-    body { 
-        font-family: 'Cairo', sans-serif; 
-        margin:0; padding:0; 
-        background: var(--light); 
-        color:#333; 
-        line-height:1.8;
-    }
-    nav { 
-        background: white; 
-        padding: 18px; 
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-        text-align:center; 
-        position: sticky; top:0; z-index:100;
-    }
-    nav a { margin: 0 15px; color: var(--primary); text-decoration: none; font-weight: 600; }
-    
-    .content { 
-        max-width: 1100px; 
-        margin: 50px auto; 
-        padding: 60px; 
-        background: white; 
-        border-radius: 20px; 
-        box-shadow: 0 10px 40px rgba(0,0,0,0.08); 
-    }
-    h1 { color: var(--primary); text-align: center; margin-bottom: 40px; }
-</style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+        :root { --primary: #0f172a; --accent: #f59e0b; }
+        body { font-family: 'Cairo', sans-serif; margin:0; padding:0; color:#333; background:#f8fafc; line-height:1.8; }
+        nav { background: white; padding: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align:center; }
+        nav a { margin: 0 15px; color: var(--primary); text-decoration: none; font-weight: 600; }
+        .content { max-width: 1100px; margin: 50px auto; padding: 50px; background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .model-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
+        .card { padding: 35px; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    </style>
 </head>
 <body>
     <nav>
@@ -48,25 +25,24 @@
     </nav>
 
     <div class="content">
-        <h1>الأمان والامتثال الرقمي</h1>
-        <p>نلتزم في AMM INTL Group بأعلى المعايير العالمية لحماية عملائنا وشركائنا.</p>
+        <h1>نموذج أعمالنا الرباعي</h1>
         
-        <div class="grid">
+        <div class="model-grid">
             <div class="card">
-                <h3>🔒 حماية البيانات</h3>
-                <p>تشفير فائق وفق معايير PCI-DSS</p>
+                <h2>B2B</h2>
+                <p>حلول الشركات والتوكيلات - طلبات الجملة والتوريد الدولي مع تسهيلات دفع وتخليص جمركي.</p>
             </div>
             <div class="card">
-                <h3>🛡️ مكافحة غسيل الأموال</h3>
-                <p>التزام كامل بقوانين AML & CFT</p>
+                <h2>B2C</h2>
+                <p>تجربة تسوق استثنائية للمستهلك النهائي مع ضمانات وخدمات ما بعد البيع.</p>
             </div>
             <div class="card">
-                <h3>📋 الامتثال القانوني</h3>
-                <p>رقابة صارمة وتفتيش دوري</p>
+                <h2>Marketplace</h2>
+                <p>منصة مفتوحة للتجار مع لوحة تحكم ذكية وخدمات "Fulfilled by AMM".</p>
             </div>
             <div class="card">
-                <h3>🛡️ الأمان السيبراني</h3>
-                <p>حماية متقدمة من الهجمات الإلكترونية</p>
+                <h2>Cross-Border</h2>
+                <p>التجارة عابرة الحدود - تصدير واستيراد رقمي بين الشرق والغرب.</p>
             </div>
         </div>
     </div>
