@@ -15,9 +15,8 @@
         
         body { 
             font-family: 'Cairo', sans-serif; 
-            margin:0; 
-            padding:0; 
-            background: var(--light-blue) !important; 
+            margin:0; padding:0; 
+            background: var(--light-blue); 
             color:#333; 
             line-height:1.8;
         }
@@ -27,18 +26,10 @@
             padding: 20px; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
             text-align:center; 
-            position: sticky; 
-            top:0; 
-            z-index:100;
+            position: sticky; top:0; z-index:100;
         }
-        
-        nav a { 
-            margin: 0 18px; 
-            color: var(--primary); 
-            text-decoration: none; 
-            font-weight: 600; 
-        }
-        
+        nav a { margin: 0 18px; color: var(--primary); text-decoration: none; font-weight: 600; }
+
         .content { 
             max-width: 1100px; 
             margin: 60px auto; 
@@ -47,20 +38,51 @@
             border-radius: 20px; 
             box-shadow: 0 10px 40px rgba(0,0,0,0.1); 
         }
-        
+
         .model-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 25px; 
+            gap: 30px; 
             margin-top: 40px; 
         }
         
         .card { 
-            padding: 35px; 
+            padding: 40px 25px; 
             background: white; 
-            border-radius: 16px; 
+            border-radius: 20px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
             text-align: center;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.2);
+        }
+
+        h1 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        h1:after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
         }
     </style>
 </head>
@@ -97,5 +119,19 @@
         </div>
     </div>
 
+    <script>
+        // تأثير ظهور الكروت عند التمرير
+        const cards = document.querySelectorAll('.card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        cards.forEach(card => observer.observe(card));
+    </script>
 </body>
 </html>
