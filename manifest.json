@@ -1,7 +1,7 @@
 {
   "name": "AMM Group",
-  "short_name": "AMM Group",
-  "description": "AMM Group - التجارة الإلكترونية العالمية",
+  "short_name": "AMM",
+  "description": "AMM Group للتجارة الإلكترونية - زيوت طبيعية، ملابس، مفروشات",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0A192F",
@@ -9,14 +9,14 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/images/amm-group-logo-192.png",
+      "src": "amm-group-logo-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/images/amm-group-logo-512.png",
-      "sizes": "512x512", 
+      "src": "amm-group-logo-512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     }
