@@ -3,49 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الشحن والتوصيل - AMM INTL Group</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <title>الشحن والتوصيل - AMM Group</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#D4AF37">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="amm-group-logo-192.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body{font-family:'Cairo',sans-serif; margin:0; background:#fafafa; line-height:1.8}
-    nav{background:#0d47a1; padding:15px}
-    nav a{color:white; margin:0 10px; text-decoration:none}
-    .container{max-width:900px; margin:40px auto; background:white; padding:40px; border-radius:8px}
-    table{width:100%; border-collapse:collapse; margin:20px 0}
-    th,td{border:1px solid #ddd; padding:12px; text-align:right}
-    th{background:#0d47a1; color:white}
-    footer{background:#222; color:#aaa; padding:30px; text-align:center; margin-top:60px}
+    *{margin:0; padding:0; box-sizing:border-box}
+    body{font-family:'Cairo',sans-serif; background:#fafafa; color:#222; line-height:1.7}
+    
+    nav{background:#0A192F; padding:15px 0; position:sticky; top:0; z-index:1000; box-shadow:0 2px 20px rgba(10,25,47,0.4)}
+    nav .wrap{max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; padding:0 20px; flex-wrap:wrap}
+    nav .logo{display:flex; align-items:center; gap:12px}
+    nav .logo img{height:48px}
+    nav .logo h2{color:#D4AF37; font-size:22px; margin:0}
+    nav .links a{color:#FFFFFF; margin:0 12px; text-decoration:none; font-weight:600}
+    nav .links a:hover{color:#D4AF37}
+
+    .hero-small{background:linear-gradient(135deg,#0A192F,#233554); color:white; text-align:center; padding:60px 20px}
+    .hero-small h1{font-size:42px; margin-bottom:10px; color:#D4AF37}
+    
+    .container{max-width:900px; margin:50px auto; background:white; padding:40px; border-radius:12px; box-shadow:0 2px 15px rgba(0,0,0,0.06); border:1px solid #e5e7eb}
+    h1{color:#0A192F; margin-bottom:30px; font-size:32px}
+    h2{color:#D4AF37; margin:30px 0 15px 0; font-size:24px}
+    p{margin:12px 0; line-height:1.9; color:#555}
+    
+    table{width:100%; border-collapse:collapse; margin:20px 0; border:2px solid #e5e7eb}
+    th,td{border:1px solid #e5e7eb; padding:14px; text-align:right}
+    th{background:#0A192F; color:#D4AF37; font-weight:700}
+    tr:hover{background:#FFF9E6}
+    
+    .alert{background:#FFF9E6; padding:20px; border-radius:8px; border-right:4px solid #D4AF37; margin:20px 0}
+    
+    footer{background:#0A192F; color:#aaa; padding:40px 20px; text-align:center; border-top:3px solid #D4AF37; margin-top:60px}
+    footer a{color:#aaa; margin:0 12px; text-decoration:none; display:inline-block; margin-bottom:10px}
+    footer a:hover{color:#D4AF37}
+    .footer-links{margin-bottom:20px}
+
+    @media(max-width:768px){
+      .container{padding:25px 20px; margin:30px 15px}
+      nav .wrap{justify-content:center; gap:15px}
+      nav .logo h2{display:none}
+      table{font-size:14px}
+    }
   </style>
 </head>
 <body>
   <nav>
-    <a href="/amm-shop/">الرئيسية</a>
-    <a href="/amm-shop/products.html">المنتجات</a>
+    <div class="wrap">
+      <div class="logo">
+        <img src="amm-group-logo.png" alt="AMM Group">
+        <h2>AMM Group</h2>
+      </div>
+      <div class="links">
+        <a href="index.html">الرئيسية</a>
+        <a href="index.html#products">منتجاتنا</a>
+        <a href="gallery.html">معرض الصور</a>
+        <a href="about.html">من نحن</a>
+        <a href="contact.html">تواصل</a>
+      </div>
+    </div>
   </nav>
 
+  <div class="hero-small">
+    <h1>الشحن والتوصيل</h1>
+    <p>نوصل طلبك لباب بيتك بأسرع وقت</p>
+  </div>
+
   <div class="container">
-    <h1>سياسة الشحن والتوصيل</h1>
-    
-    <h2>مدة التوصيل</h2>
+    <h2>🚚 مدة التوصيل</h2>
     <table>
       <tr><th>المنطقة</th><th>المدة</th><th>التكلفة</th></tr>
       <tr><td>أم القيوين، دبي، الشارقة</td><td>1-2 يوم عمل</td><td>15 درهم</td></tr>
-      <tr><td>باقي الإمارات</td><td>2-3 أيام عمل</td><td>20 درهم</td></tr>
-      <tr><td>السعودية، عمان، الكويت</td><td>4-7 أيام عمل</td><td>40 درهم</td></tr>
-      <tr><td>باقي الدول</td><td>7-14 يوم عمل</td><td>يتم حسابها عند الدفع</td></tr>
+      <tr><td>أبوظبي، عجمان، رأس الخيمة، الفجيرة</td><td>2-3 أيام عمل</td><td>20 درهم</td></tr>
+      <tr><td>السعودية، عمان، الكويت، البحرين، قطر</td><td>4-7 أيام عمل</td><td>40 درهم</td></tr>
+      <tr><td>باقي دول العالم</td><td>7-14 يوم عمل</td><td>حسب الوزن</td></tr>
     </table>
 
-    <h2>شحن مجاني</h2>
-    <p><strong>شحن مجاني للطلبات فوق 300 درهم داخل الإمارات</strong></p>
+    <div class="alert">
+      <strong>🎁 شحن مجاني للطلبات فوق 300 درهم داخل الإمارات</strong><br>
+      وفوق 500 درهم لدول الخليج
+    </div>
 
-    <h2>تتبع الشحنة</h2>
-    <p>ستصلك رسالة واتساب برقم التتبع بعد شحن طلبك مباشرة.</p>
+    <h2>📍 تتبع الشحنة</h2>
+    <p>ستصلك رسالة واتساب برقم التتبع بعد شحن طلبك مباشرة. تقدر تتابع الشحنة لحظة بلحظة من التجهيز للتسليم.</p>
 
-    <h2>شركات الشحن</h2>
-    <p>نتعامل مع: أرامكس، سمسا، بريد الإمارات لضمان وصول آمن وسريع.</p>
+    <h2>📦 شركات الشحن</h2>
+    <p>نتعامل مع أفضل الشركات: <strong>أرامكس، سمسا، بريد الإمارات، DHL</strong> لضمان وصول آمن وسريع. جميع الشحنات مؤمنة بالكامل ضد الكسر أو الفقدان.</p>
+
+    <h2>📦 التغليف</h2>
+    <p>تغليف محكم ضد الكسر والتسريب. الزيوت في عبوات محمية بفقاعات هوائية. المفروشات في أكياس مضغوطة نظيفة. نستخدم مواد تغليف صديقة للبيئة.</p>
+
+    <h2>💬 للاستفسار</h2>
+    <p>واتساب: <a href="https://wa.me/971508128499" style="color:#D4AF37; font-weight:700">+971 50 812 8499</a><br>
+    الإيميل: info@ammgroup.ae</p>
   </div>
 
   <footer>
-    <p>© 2026 AMM INTL Group</p>
+    <div class="footer-links">
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <a href="refund.html">سياسة الاسترجاع</a>
+      <a href="shipping.html">الشحن والتوصيل</a>
+      <a href="terms.html">الشروط والأحكام</a>
+      <a href="contact.html">تواصل معنا</a>
+    </div>
+    <p>© 2026 AMM Group. جميع الحقوق محفوظة</p>
+    <p style="margin-top:10px; font-size:14px">الشارقة، الإمارات العربية المتحدة | واتساب: +971 50 812 8499</p>
   </footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
 </body>
 </html>
