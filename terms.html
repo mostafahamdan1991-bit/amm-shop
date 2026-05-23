@@ -3,63 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الشروط والأحكام - AMM INTL Group</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>الشروط والأحكام - AMM Group</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#D4AF37">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="amm-group-logo-192.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     *{margin:0; padding:0; box-sizing:border-box}
-    body{font-family:'Cairo',sans-serif; margin:0; background:#fafafa; color:#222; line-height:1.9}
-    nav{background:#0d47a1; padding:15px 0; box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+    body{font-family:'Cairo',sans-serif; background:#fafafa; color:#222; line-height:1.9}
+    
+    nav{background:#0A192F; padding:15px 0; position:sticky; top:0; z-index:1000; box-shadow:0 2px 20px rgba(10,25,47,0.4)}
     nav .wrap{max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; padding:0 20px; flex-wrap:wrap}
-    nav h2{color:white; font-size:22px}
-    nav .links a{color:white; margin:0 12px; text-decoration:none; font-weight:600}
-    nav .links a:hover{opacity:0.8}
-    nav .links a.active{border-bottom:2px solid white}
+    nav .logo{display:flex; align-items:center; gap:12px}
+    nav .logo img{height:48px}
+    nav .logo h2{color:#D4AF37; font-size:22px; margin:0}
+    nav .links a{color:#FFFFFF; margin:0 12px; text-decoration:none; font-weight:600}
+    nav .links a:hover{color:#D4AF37}
     
-    .container{max-width:900px; margin:50px auto; background:white; padding:40px; border-radius:12px; box-shadow:0 2px 15px rgba(0,0,0,0.06)}
-    h1{color:#0d47a1; font-size:32px; margin-bottom:10px}
+    .hero-small{background:linear-gradient(135deg,#0A192F,#233554); color:white; text-align:center; padding:60px 20px}
+    .hero-small h1{font-size:42px; margin-bottom:10px; color:#D4AF37}
+    
+    .container{max-width:900px; margin:50px auto; background:white; padding:40px; border-radius:12px; box-shadow:0 2px 15px rgba(0,0,0,0.06); border:1px solid #e5e7eb}
+    h1{color:#0A192F; font-size:32px; margin-bottom:10px}
     .update{color:#666; font-size:14px; margin-bottom:30px}
-    h2{color:#1976d2; font-size:24px; margin:35px 0 15px 0; border-right:4px solid #1976d2; padding-right:12px}
-    h3{color:#0d47a1; font-size:18px; margin:25px 0 10px 0}
-    p{margin-bottom:15px; font-size:16px}
+    h2{color:#D4AF37; font-size:24px; margin:35px 0 15px 0; border-right:4px solid #D4AF37; padding-right:12px}
+    h3{color:#0A192F; font-size:18px; margin:25px 0 10px 0}
+    p{margin-bottom:15px; font-size:16px; color:#555}
     ul{margin:15px 30px 15px 0}
-    li{margin-bottom:10px}
-    .highlight{background:#e3f2fd; padding:20px; border-right:4px solid #0d47a1; margin:25px 0; border-radius:6px}
+    li{margin-bottom:10px; color:#555}
+    .highlight{background:#FFF9E6; padding:20px; border-right:4px solid #D4AF37; margin:25px 0; border-radius:6px}
     .warning{background:#fff3cd; border-right:4px solid #ffc107; padding:18px; border-radius:6px; margin:20px 0}
+    a{color:#D4AF37; font-weight:600; text-decoration:none}
+    a:hover{text-decoration:underline}
     
-    footer{background:#1a1a1a; color:#aaa; padding:30px 20px; text-align:center; margin-top:60px}
-    footer a{color:#aaa; margin:0 12px; text-decoration:none}
+    footer{background:#0A192F; color:#aaa; padding:40px 20px; text-align:center; border-top:3px solid #D4AF37; margin-top:60px}
+    footer a{color:#aaa; margin:0 12px; text-decoration:none; display:inline-block; margin-bottom:10px}
+    footer a:hover{color:#D4AF37}
+    .footer-links{margin-bottom:20px}
     
     @media(max-width:768px){
       .container{padding:25px 20px; margin:30px 15px}
       nav .wrap{justify-content:center; gap:15px}
+      nav .logo h2{display:none}
     }
   </style>
 </head>
 <body>
   <nav>
     <div class="wrap">
-      <h2>AMM INTL Group</h2>
+      <div class="logo">
+        <img src="amm-group-logo.png" alt="AMM Group">
+        <h2>AMM Group</h2>
+      </div>
       <div class="links">
-        <a href="/amm-shop/">الرئيسية</a>
-        <a href="/amm-shop/#products">المنتجات</a>
-        <a href="/amm-shop/about.html">من نحن</a>
-        <a href="/amm-shop/b2b-register.html">سجّل كتاجر</a>
-        <a href="/amm-shop/contact.html">تواصل</a>
+        <a href="index.html">الرئيسية</a>
+        <a href="index.html#products">المنتجات</a>
+        <a href="gallery.html">معرض الصور</a>
+        <a href="about.html">من نحن</a>
+        <a href="contact.html">تواصل</a>
       </div>
     </div>
   </nav>
 
-  <div class="container">
+  <div class="hero-small">
     <h1>الشروط والأحكام</h1>
-    <p class="update">آخر تحديث: 16 مايو 2026</p>
-    
+    <p class="update">آخر تحديث: 24 مايو 2026</p>
+  </div>
+
+  <div class="container">
     <div class="highlight">
-      <strong>باستخدامك لموقع AMM INTL Group أو شراء أي منتج، فأنت توافق على جميع الشروط والأحكام التالية.</strong>
+      <strong>باستخدامك لموقع AMM Group أو شراء أي منتج، فأنت توافق على جميع الشروط والأحكام التالية.</strong>
     </div>
 
     <h2>1. التعريفات</h2>
     <ul>
-      <li><strong>"الشركة" أو "نحن":</strong> AMM INTL Group - مجموعة إي إم إم العالمية</li>
+      <li><strong>"الشركة" أو "نحن":</strong> AMM Group - مجموعة إي إم إم</li>
       <li><strong>"الموقع":</strong> https://mostafahamdan1991-bit.github.io/amm-shop/</li>
       <li><strong>"العميل" أو "أنت":</strong> أي شخص يتصفح الموقع أو يشتري منتجاتنا</li>
       <li><strong>"المنتجات":</strong> الزيوت الطبيعية، الملابس الجاهزة، المفروشات القطنية، وأي منتج آخر نبيعه</li>
@@ -90,7 +109,7 @@
       <li>جميع الأسعار بالدرهم الإماراتي AED وتشمل ضريبة القيمة المضافة 5%</li>
       <li>نحتفظ بالحق في تغيير الأسعار في أي وقت بدون إشعار مسبق</li>
       <li>السعر المعتمد هو السعر وقت إتمام الطلب، وليس وقت إضافته للسلة</li>
-      <li>في حالة خطأ سعري واضح (مثل 1 درهم بدل 100 درهم)، نحتفظ بحق إلغاء الطلب وإرجاع المبلغ</li>
+      <li>في حالة خطأ سعري واضح، نحتفظ بحق إلغاء الطلب وإرجاع المبلغ</li>
     </ul>
 
     <h3>3.3 التوفر</h3>
@@ -103,7 +122,7 @@
     <h3>4.2 طرق الدفع</h3>
     <ul>
       <li>الدفع عند الاستلام COD: متاح داخل الإمارات فقط</li>
-      <li>بطاقات الائتمان/الخصم: Visa, Mastercard عبر بوابة دفع آمنة Stripe</li>
+      <li>بطاقات الائتمان/الخصم: Visa, Mastercard عبر بوابة دفع آمنة</li>
       <li>Apple Pay / Google Pay</li>
       <li>تحويل بنكي: للطلبات فوق 1000 درهم</li>
     </ul>
@@ -113,13 +132,13 @@
 
     <h2>5. الشحن والتوصيل</h2>
     <ul>
-      <li><strong>داخل الإمارات:</strong> 1-2 يوم عمل، 20 درهم. مجاني للطلبات فوق 200 درهم</li>
+      <li><strong>داخل الإمارات:</strong> 1-2 يوم عمل، 20 درهم. مجاني للطلبات فوق 300 درهم</li>
       <li><strong>دول الخليج:</strong> 3-5 أيام عمل، 50-80 درهم حسب الدولة</li>
       <li><strong>دولي:</strong> 7-14 يوم عمل، يبدأ من 100 درهم</li>
       <li>أوقات التوصيل تقديرية وقد تتأخر في المواسم والأعياد</li>
       <li>أنت مسؤول عن أي جمارك أو ضرائب في بلدك للطلبات الدولية</li>
     </ul>
-    <p>للتفاصيل الكاملة: <a href="/amm-shop/shipping.html" style="color:#0d47a1">سياسة الشحن والتوصيل</a></p>
+    <p>للتفاصيل الكاملة: <a href="shipping.html">سياسة الشحن والتوصيل</a></p>
 
     <h2>6. الاسترجاع والاستبدال</h2>
     <p>يمكنك إرجاع المنتج خلال 7 أيام من الاستلام حسب الشروط التالية:</p>
@@ -129,10 +148,10 @@
       <li>الملابس: بالتكت والتغليف الأصلي</li>
       <li>المفروشات: غير مستخدمة وبتغليفها</li>
     </ul>
-    <p>للتفاصيل الكاملة: <a href="/amm-shop/refund.html" style="color:#0d47a1">سياسة الاسترجاع</a></p>
+    <p>للتفاصيل الكاملة: <a href="refund.html">سياسة الاسترجاع</a></p>
 
     <h2>7. الملكية الفكرية</h2>
-    <p>جميع محتويات الموقع - النصوص، الصور، الشعار، التصميم - مملوكة لـ AMM INTL Group ومحمية بقوانين حقوق النشر. يُمنع النسخ أو الاستخدام التجاري بدون إذن كتابي.</p>
+    <p>جميع محتويات الموقع - النصوص، الصور، الشعار، التصميم - مملوكة لـ AMM Group ومحمية بقوانين حقوق النشر. يُمنع النسخ أو الاستخدام التجاري بدون إذن كتابي.</p>
 
     <h2>8. إخلاء المسؤولية</h2>
     <div class="warning">
@@ -146,7 +165,7 @@
     <p>في جميع الأحوال، أقصى مسؤولية علينا تجاهك هي قيمة المنتج اللي اشتريته. لسنا مسؤولين عن أي أضرار غير مباشرة، خسارة أرباح، أو ضرر معنوي.</p>
 
     <h2>10. الخصوصية</h2>
-    <p>نحترم خصوصيتك ونحمي بياناتك. للتفاصيل: <a href="/amm-shop/privacy.html" style="color:#0d47a1">سياسة الخصوصية</a></p>
+    <p>نحترم خصوصيتك ونحمي بياناتك. للتفاصيل: <a href="privacy.html">سياسة الخصوصية</a></p>
 
     <h2>11. القانون الحاكم</h2>
     <p>تخضع هذه الشروط لقوانين دولة الإمارات العربية المتحدة. أي نزاع يُحل ودياً أولاً، ولو فشل، تكون محاكم أم القيوين هي المختصة.</p>
@@ -157,21 +176,28 @@
     <h2>13. تواصل معنا</h2>
     <p>
       لأي استفسار عن الشروط والأحكام:<br>
-      <strong>الإيميل:</strong> complaint@ammintlgroup.com<br>
+      <strong>الإيميل:</strong> info@ammgroup.ae<br>
       <strong>واتساب:</strong> +971 50 812 8499<br>
-      <strong>العنوان:</strong> أم القيوين، الإمارات العربية المتحدة
+      <strong>العنوان:</strong> الشارقة، الإمارات العربية المتحدة
     </p>
   </div>
 
   <footer>
-    <div>
-      <a href="/amm-shop/privacy.html">سياسة الخصوصية</a>
-      <a href="/amm-shop/refund.html">سياسة الاسترجاع</a>
-      <a href="/amm-shop/shipping.html">الشحن والتوصيل</a>
-      <a href="/amm-shop/terms.html" class="active">الشروط والأحكام</a>
-      <a href="/amm-shop/contact.html">تواصل معنا</a>
+    <div class="footer-links">
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <a href="refund.html">سياسة الاسترجاع</a>
+      <a href="shipping.html">الشحن والتوصيل</a>
+      <a href="terms.html">الشروط والأحكام</a>
+      <a href="contact.html">تواصل معنا</a>
     </div>
-    <p style="margin-top:15px">© 2026 AMM INTL Group. جميع الحقوق محفوظة</p>
+    <p>© 2026 AMM Group. جميع الحقوق محفوظة</p>
+    <p style="margin-top:10px; font-size:14px">الشارقة، الإمارات العربية المتحدة | واتساب: +971 50 812 8499</p>
   </footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
 </body>
 </html>
