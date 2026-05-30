@@ -10,7 +10,7 @@
     *{margin:0; padding:0; box-sizing:border-box}
     body{font-family:'Cairo',sans-serif; background:#fafafa; color:#222; line-height:1.7}
     
-    /* Nav */
+    /* Nav - رجعت كل اللينكات */
     nav{background:#0A192F; padding:15px 0; position:sticky; top:0; z-index:1000; box-shadow:0 2px 20px rgba(10,25,47,0.4)}
     nav .wrap{max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; padding:0 20px; flex-wrap:wrap}
     nav .logo{display:flex; align-items:center; gap:12px}
@@ -109,7 +109,7 @@
   <!-- Overlay -->
   <div class="overlay" id="overlay" onclick="toggleCart()"></div>
 
-  <!-- Nav -->
+  <!-- Nav - رجعت كل اللينكات اللي كانت عندك -->
   <nav>
     <div class="wrap">
       <div class="logo">
@@ -119,7 +119,9 @@
       <div class="links">
         <a href="/amm-shop/">الرئيسية</a>
         <a href="#products">منتجاتنا</a>
+        <a href="/amm-shop/gallery.html">معرض الصور</a>
         <a href="/amm-shop/about.html">من نحن</a>
+        <a href="/amm-shop/b2b-register.html">سجّل كتاجر</a>
         <a href="/amm-shop/contact.html">تواصل</a>
         <div class="cart-icon" onclick="toggleCart()">
           🛒
@@ -183,12 +185,12 @@
     </div>
   </div>
 
-  <!-- Products -->
+  <!-- Products - غير أسماء الصور هنا حسب اللي عندك -->
   <div class="container" id="products">
     <h2 class="section-title">منتجاتنا المميزة</h2>
     <p class="section-sub">جودة عالمية بأسعار تنافسية</p>
     <div class="grid">
-      <!-- Product 1 - عدّل اسم الصورة هنا -->
+      <!-- Product 1 - غير product1.jpg بالاسم الصح -->
       <div class="card">
         <img src="images/product1.jpg" alt="كوفرتة قطن مصري">
         <div class="card-body">
@@ -198,7 +200,7 @@
           <button class="add-to-cart" onclick="addToCart('كوفرتة قطن مصري 100%', 280, 'images/product1.jpg')">أضف للسلة</button>
         </div>
       </div>
-      <!-- Product 2 - عدّل اسم الصورة هنا -->
+      <!-- Product 2 - غير product2.jpg بالاسم الصح -->
       <div class="card">
         <img src="images/product2.jpg" alt="عباية خليجية">
         <div class="card-body">
@@ -208,7 +210,7 @@
           <button class="add-to-cart" onclick="addToCart('عباية خليجية مطرزة', 350, 'images/product2.jpg')">أضف للسلة</button>
         </div>
       </div>
-      <!-- Product 3 - عدّل اسم الصورة هنا -->
+      <!-- Product 3 - غير product3.jpg بالاسم الصح -->
       <div class="card">
         <img src="images/product3.jpg" alt="زيت الأرغان">
         <div class="card-body">
