@@ -3,480 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AMM Group | التجارة الإلكترونية العالمية</title>
-  <meta name="description" content="AMM Group - زيوت طبيعية للشعر والبشرة، ملابس جاهزة، مفروشات وكوفرتات قطن 100% يدوية من الإمارات">
-  
-  <!-- PWA -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#D4AF37">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="AMM Group">
-  <link rel="apple-touch-icon" href="amm-group-logo-192.png">
-  
+  <title>AMM INTL Group</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    *{margin:0; padding:0; box-sizing:border-box}
-    body{font-family:'Cairo',sans-serif; background:#fafafa; color:#222; line-height:1.7}
-    
-    /* Nav */
-    nav{background:#0A192F; padding:15px 0; position:sticky; top:0; z-index:1000; box-shadow:0 2px 20px rgba(10,25,47,0.4)}
-    nav .wrap{max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; padding:0 20px; flex-wrap:wrap}
-    nav .logo{display:flex; align-items:center; gap:12px}
-    nav .logo img{height:48px}
-    nav .logo h2{color:#D4AF37; font-size:22px; margin:0}
-    nav .links a{color:#FFFFFF; margin:0 12px; text-decoration:none; font-weight:600}
-    nav .links a:hover{color:#D4AF37}
-
-    /* Hero */
-    .hero{background:linear-gradient(135deg,#0A192F,#233554); color:white; text-align:center; padding:80px 20px}
-    .hero h1{font-size:38px; margin-bottom:15px; color:#FFFFFF}
-    .hero p{font-size:19px; margin-bottom:15px; opacity:0.9; max-width:800px; margin-left:auto; margin-right:auto}
-    .hero-btns{margin-top:30px}
-    .hero-btn{background:#D4AF37; color:#0A192F; padding:14px 32px; border-radius:30px; text-decoration:none; font-weight:700; display:inline-block; margin:5px}
-    .hero-btn.outline{background:transparent; border:2px solid #D4AF37; color:#D4AF37}
-    .hero-btn:hover{transform:scale(1.05); transition:0.3s; box-shadow:0 5px 15px rgba(212,175,55,0.3)}
-
-    /* Sections */
-    .container{max-width:1200px; margin:60px auto; padding:0 20px}
-    .section-title{text-align:center; font-size:32px; color:#0A192F; margin-bottom:15px}
-    .section-sub{text-align:center; color:#666; margin-bottom:40px; font-size:18px}
-    
-    /* Features */
-    .features{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; margin:40px 0}
-    .feature{background:white; padding:30px; border-radius:12px; text-align:center; box-shadow:0 2px 15px rgba(0,0,0,0.06); border:1px solid #e5e7eb}
-    .feature h3{color:#0A192F; margin:15px 0; font-size:22px}
-    .feature-icon{font-size:48px}
-
-    /* سكشن الثقة - 10 صور تحفيزية */
-    .trust-gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; margin:40px 0}
-    .trust-card{position:relative; height:280px; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.12); cursor:pointer}
-    .trust-card img{width:100%; height:100%; object-fit:cover; transition:0.6s}
-    .trust-card:hover img{transform:scale(1.15)}
-    .trust-card .overlay{position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent,rgba(10,25,47,0.95)); padding:25px; color:white; transform:translateY(10px); transition:0.4s}
-    .trust-card:hover .overlay{transform:translateY(0)}
-    .trust-card .overlay h3{font-size:18px; margin-bottom:8px; color:#D4AF37}
-    .trust-card .overlay p{font-size:14px; opacity:0.9}
-
-    /* قيمنا الأساسية */
-    .values-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; margin:30px 0}
-    .value-card{background:linear-gradient(135deg,#F8FAFC,#FFFFFF); padding:30px; border-radius:12px; border:2px solid #e5e7eb; transition:0.3s}
-    .value-card:hover{border-color:#D4AF37; transform:translateY(-5px); box-shadow:0 8px 25px rgba(212,175,55,0.2)}
-    .value-card .icon{font-size:42px; margin-bottom:15px}
-    .value-card h3{color:#0A192F; font-size:20px; margin-bottom:12px}
-    .value-card p{font-size:15px; color:#555; line-height:1.7}
-
-    /* Products */
-    .filters{text-align:center; margin-bottom:35px}
-    .filters button{background:white; border:2px solid #0A192F; color:#0A192F; padding:10px 25px; margin:5px; border-radius:25px; cursor:pointer; font-family:'Cairo'; font-weight:600}
-    .filters button.active, .filters button:hover{background:#0A192F; color:#D4AF37}
-    .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:25px}
-    .card{background:white; border-radius:12px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.08); transition:0.3s; border:1px solid #e5e7eb}
-    .card:hover{transform:translateY(-5px); box-shadow:0 5px 20px rgba(212,175,55,0.2)}
-    .card img{width:100%; height:260px; object-fit:cover}
-    .card-body{padding:20px}
-    .card h3{margin-bottom:10px; font-size:18px; color:#0A192F}
-    .card p{color:#666; font-size:14px; margin-bottom:10px; min-height:40px}
-    .price{color:#D4AF37; font-size:22px; font-weight:700; margin:12px 0}
-    .btn{background:#D4AF37; color:#0A192F; padding:12px; width:100%; border:none; border-radius:6px; cursor:pointer; font-family:'Cairo'; font-size:16px; font-weight:700}
-    .btn:hover{background:#B8941F}
-
-    /* لماذا نحن */
-    .why-us{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:25px; margin:30px 0}
-    .why-item{background:#F8FAFC; padding:30px; border-radius:12px; border:1px solid #e5e7eb; text-align:center; transition:0.3s}
-    .why-item:hover{transform:translateY(-5px); box-shadow:0 8px 25px rgba(212,175,55,0.25); border-color:#D4AF37}
-    .why-item .icon{font-size:48px; margin-bottom:15px}
-    .why-item h3{color:#0A192F; font-size:20px; margin-bottom:12px}
-    .why-item p{font-size:15px; color:#555}
-
-    /* الشهادات */
-    .certificates{display:flex; justify-content:center; gap:40px; flex-wrap:wrap; margin:40px 0}
-    .cert{text-align:center; background:white; padding:25px; border-radius:12px; border:2px solid #e5e7eb; min-width:180px; transition:0.3s}
-    .cert:hover{border-color:#D4AF37; transform:scale(1.05)}
-    .cert .icon{font-size:52px; margin-bottom:10px}
-    .cert h4{color:#0A192F; font-size:16px; margin-bottom:5px}
-    .cert p{font-size:14px; color:#666}
-
-    /* Stats */
-    .stats{background:#0A192F; color:white; padding:60px 20px; text-align:center}
-    .stats-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:35px; max-width:1000px; margin:auto}
-    .stat h3{font-size:42px; margin-bottom:5px; color:#D4AF37}
-    .stat p{opacity:0.9}
-
-    /* CTA */
-    .cta-section{background:linear-gradient(135deg,#0A192F,#233554); color:white; padding:60px 30px; border-radius:12px; text-align:center; margin:40px 20px; position:relative; overflow:hidden}
-    .cta-section::before{content:''; position:absolute; top:-50%; right:-50%; width:200%; height:200%; background:radial-gradient(circle,rgba(212,175,55,0.1) 0%,transparent 70%); animation:pulse 4s ease-in-out infinite}
-    @keyframes pulse{0%,100%{transform:scale(1)} 50%{transform:scale(1.1)}}
-    .cta-section h2{font-size:36px; margin-bottom:15px; color:#D4AF37; position:relative}
-    .cta-section p{font-size:19px; margin-bottom:30px; opacity:0.95; position:relative}
-    .cta-btn{background:#D4AF37; color:#0A192F; padding:18px 50px; border-radius:30px; text-decoration:none; font-weight:800; font-size:20px; display:inline-block; position:relative; box-shadow:0 5px 20px rgba(212,175,55,0.4)}
-    .cta-btn:hover{transform:scale(1.08); transition:0.3s; box-shadow:0 8px 30px rgba(212,175,55,0.6)}
-
-    /* Footer */
-    footer{background:#0A192F; color:#aaa; padding:40px 20px; text-align:center; border-top:3px solid #D4AF37}
-    footer a{color:#aaa; margin:0 12px; text-decoration:none; display:inline-block; margin-bottom:10px}
-    footer a:hover{color:#D4AF37}
-    .footer-links{margin-bottom:20px}
-
-    @media(max-width:768px){
-      .hero h1{font-size:26px}
-      nav .wrap{justify-content:center; gap:15px}
-      .hero-btn{display:block; margin:10px auto; max-width:250px}
-      nav .logo h2{display:none}
-      .trust-gallery{grid-template-columns:1fr}
-      .values-grid{grid-template-columns:1fr}
-    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Cairo',sans-serif;background:#fafafa;color:#222}
+    nav{background:#0A192F;padding:15px 0;position:sticky;top:0;z-index:1000}
+    nav .wrap{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:0 20px}
+    nav .logo{display:flex;align-items:center;gap:12px}
+    nav .logo img{height:50px}
+    nav .logo h2{color:#D4AF37;font-size:22px;margin:0;font-weight:700}
+    nav .links{display:flex;align-items:center;gap:20px}
+    nav .links a{color:#FFF;text-decoration:none;font-weight:600}
+    .cart-icon{position:relative;cursor:pointer;font-size:26px;color:#FFF;user-select:none}
+    .cart-count{position:absolute;top:-8px;right:-8px;background:#D4AF37;color:#0A192F;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+    .hero{background:linear-gradient(135deg,#0A192F,#233554);color:white;text-align:center;padding:80px 20px}
+    .hero h1{font-size:38px;margin-bottom:15px;font-weight:800}
+    .container{max-width:1200px;margin:60px auto;padding:0 20px}
+    .section-title{text-align:center;font-size:32px;color:#0A192F;margin-bottom:40px;font-weight:800}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:25px}
+    .card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 15px rgba(0,0,0,0.08)}
+    .card:hover{transform:translateY(-8px)}
+    .card img{width:100%;height:280px;object-fit:cover}
+    .card-body{padding:20px;text-align:center}
+    .card-body h3{color:#0A192F;font-size:22px;margin-bottom:10px;font-weight:700}
+    .card-body p{color:#666;font-size:15px;margin-bottom:15px}
+    .price{color:#D4AF37;font-size:26px;font-weight:800;margin:15px 0}
+    .add-to-cart{background:#D4AF37;color:#0A192F;border:none;padding:14px;width:100%;border-radius:8px;font-weight:700;font-family:'Cairo';font-size:16px;cursor:pointer}
+    .add-to-cart:hover{background:#0A192F;color:#D4AF37}
+    .cart-sidebar{position:fixed;left:-400px;top:0;width:380px;height:100vh;background:white;box-shadow:2px 0 20px rgba(0,0,0,0.2);transition:0.4s;z-index:2000;overflow-y:auto}
+    .cart-sidebar.active{left:0}
+    .cart-header{background:#0A192F;color:white;padding:20px;display:flex;justify-content:space-between;align-items:center}
+    .cart-header h3{color:#D4AF37;font-size:22px;margin:0}
+    .close-cart{background:none;border:none;color:white;font-size:28px;cursor:pointer}
+    .cart-items{padding:20px}
+    .cart-item{display:flex;gap:15px;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid #eee}
+    .cart-item img{width:80px;height:80px;object-fit:cover;border-radius:8px}
+    .cart-item-info{flex:1}
+    .cart-item-info h4{color:#0A192F;font-size:16px;margin-bottom:5px}
+    .cart-item-info p{color:#D4AF37;font-weight:700;margin-bottom:8px}
+    .remove-item{background:#ff4444;color:white;border:none;padding:5px 10px;border-radius:5px;cursor:pointer;font-size:12px}
+    .cart-total{padding:20px;background:#f8f9fa;position:sticky;bottom:0}
+    .cart-total h4{display:flex;justify-content:space-between;font-size:20px;color:#0A192F;margin-bottom:15px}
+    .checkout-btn{background:#25D366;color:white;border:none;padding:15px;width:100%;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer}
+    .empty-cart{text-align:center;padding:40px 20px;color:#999}
+    .overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);display:none;z-index:1999}
+    .overlay.active{display:block}
+    footer{background:#0A192F;color:#aaa;padding:40px 20px;text-align:center;border-top:3px solid #D4AF37}
+    footer a{color:#aaa;margin:0 12px;text-decoration:none}
+    @media(max-width:768px){nav .logo h2{display:none}.cart-sidebar{width:100%;left:-100%}}
   </style>
 </head>
 <body>
-  <!-- Nav -->
+  <div class="overlay" id="overlay" onclick="toggleCart()"></div>
   <nav>
     <div class="wrap">
       <div class="logo">
-        <img src="amm-group-logo.png" alt="AMM Group">
-        <h2>AMM Group</h2>
+        <img src="images/logo.png" alt="AMM INTL Group">
+        <h2>AMM INTL Group</h2>
       </div>
       <div class="links">
-        <a href="index.html">الرئيسية</a>
-        <a href="#trust">لماذا نحن</a>
+        <a href="/amm-shop/">الرئيسية</a>
         <a href="#products">منتجاتنا</a>
-        <a href="gallery.html">معرض الصور</a>
-        <a href="about.html">من نحن</a>
-        <a href="contact.html">تواصل</a>
+        <a href="/amm-shop/contact.html">تواصل</a>
+        <div class="cart-icon" onclick="toggleCart()">🛒<span class="cart-count" id="cartCount">0</span></div>
       </div>
     </div>
   </nav>
-
-  <!-- Hero -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>سلة التسوق</h3>
+      <button class="close-cart" onclick="toggleCart()">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"><div class="empty-cart">السلة فارغة</div></div>
+    <div class="cart-total" id="cartTotal" style="display:none">
+      <h4><span>الإجمالي:</span> <span id="totalPrice">0 درهم</span></h4>
+      <button class="checkout-btn" onclick="checkout()">إتمام الشراء عبر واتساب</button>
+    </div>
+  </div>
   <div class="hero">
-    <h1>AMM Group | التجارة الإلكترونية العالمية</h1>
-    <p>مجموعة إي إم إم تقود مستقبل الأسواق الرقمية الذكية من قلب دولة الإمارات العربية المتحدة</p>
-    <p>نربط المصانع، الشركات، والمستهلكين عبر منصة موحدة متكاملة</p>
-    <div class="hero-btns">
-      <a href="#products" class="hero-btn">ابدأ التسوق الآن (B2C)</a>
-      <a href="b2b-register.html" class="hero-btn outline">سجّل كتاجر أو شريك (B2B)</a>
-    </div>
+    <h1>AMM INTL Group | التجارة الإلكترونية العالمية</h1>
+    <p>مجموعة إي إم إم العالمية تقود مستقبل الأسواق الرقمية الذكية</p>
   </div>
-
-  <!-- نموذج أعمالنا -->
-  <div class="container">
-    <h2 class="section-title">نموذج أعمالنا الرباعي</h2>
-    <p class="section-sub">حلول متكاملة للشركات والأفراد</p>
-    <div class="features">
-      <div class="feature">
-        <div class="feature-icon">🏢</div>
-        <h3>B2B</h3>
-        <p>حلول الشركات والتوريدات بالجملة للمتاجر والموزعين</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">🛍</div>
-        <h3>B2C</h3>
-        <p>تجربة تسوق استثنائية للمستهلك مع توصيل سريع</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">🏪</div>
-        <h3>Marketplace</h3>
-        <p>منصة مفتوحة للتجار لعرض منتجاتهم والوصول لعملاء جدد</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">🌍</div>
-        <h3>Cross-Border</h3>
-        <p>التجارة عابرة الحدود - نشحن لأكثر من 50 دولة حول العالم</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- سكشن الثقة - 10 صور تحفيزية -->
-  <div class="container" id="trust">
-    <h2 class="section-title">لماذا AMM Group؟</h2>
-    <p class="section-sub">نبني الثقة بالنتائج والأرقام، مش بالكلام</p>
-    
-    <div class="trust-gallery">
-      <!-- 1. ميناء وشحن عالمي -->
-      <div class="trust-card">
-        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600" alt="شحن عالمي">
-        <div class="overlay">
-          <h3>🚢 شحن لـ 50+ دولة</h3>
-          <p>شبكة لوجستية تغطي 5 قارات</p>
-        </div>
-      </div>
-
-      <!-- 2. مخازن حديثة -->
-      <div class="trust-card">
-        <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=600" alt="مخازن">
-        <div class="overlay">
-          <h3>📦 مخازن ذكية</h3>
-          <p>تجهيز طلبك خلال 24 ساعة</p>
-        </div>
-      </div>
-
-      <!-- 3. فريق محترف -->
-      <div class="trust-card">
-        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600" alt="فريق عمل">
-        <div class="overlay">
-          <h3>👥 فريق خبرة 20 سنة</h3>
-          <p>نفهم السوق ونحميك من الغش</p>
-        </div>
-      </div>
-
-      <!-- 4. اجتماعات B2B -->
-      <div class="trust-card">
-        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600" alt="شراكات">
-        <div class="overlay">
-          <h3>🤝 شراكات B2B قوية</h3>
-          <p>نتعامل مع مصانع وموزعين كبار</p>
-        </div>
-      </div>
-
-      <!-- 5. تكنولوجيا -->
-      <div class="trust-card">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" alt="تجارة رقمية">
-        <div class="overlay">
-          <h3>💻 منصة رقمية متطورة</h3>
-          <p>طلب آمن + تتبع حي + دفع محمي</p>
-        </div>
-      </div>
-
-      <!-- 6. شحن جوي -->
-      <div class="trust-card">
-        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600" alt="شحن جوي">
-        <div class="overlay">
-          <h3>✈ شحن جوي سريع</h3>
-          <p>للطلبات المستعجلة حول العالم</p>
-        </div>
-      </div>
-
-      <!-- 7. جودة وفحص -->
-      <div class="trust-card">
-        <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600" alt="جودة">
-        <div class="overlay">
-          <h3>🔬 فحص جودة دقيق</h3>
-          <p>كل منتج يمر بـ 3 مراحل فحص</p>
-        </div>
-      </div>
-
-      <!-- 8. عملاء سعداء -->
-      <div class="trust-card">
-        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600" alt="عملاء">
-        <div class="overlay">
-          <h3>⭐ آلاف العملاء الراضين</h3>
-          <p>تقييم 4.8/5 من عملائنا</p>
-        </div>
-      </div>
-
-      <!-- 9. نمو -->
-      <div class="trust-card">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600" alt="نمو">
-        <div class="overlay">
-          <h3>📈 نمو 40% سنوياً</h3>
-          <p>ثقة العملاء سر نجاحنا</p>
-        </div>
-      </div>
-
-      <!-- 10. دعم -->
-      <div class="trust-card">
-        <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=600" alt="دعم">
-        <div class="overlay">
-          <h3>💬 دعم 7 أيام أسبوعياً</h3>
-          <p>فريق واتساب يرد خلال دقائق</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- قيمنا الأساسية -->
-  <div class="container">
-    <h2 class="section-title">قيمنا الأساسية</h2>
-    <p class="section-sub">المبادئ التي نعمل بها كل يوم</p>
-    <div class="values-grid">
-      <div class="value-card">
-        <div class="icon">🌿</div>
-        <h3>الجودة الطبيعية</h3>
-        <p>جميع زيوتنا معصورة على البارد، ومفروشاتنا قطن مصري 100% بدون إضافات صناعية. نختبر كل منتج قبل الشحن.</p>
-      </div>
-      <div class="value-card">
-        <div class="icon">🤝</div>
-        <h3>الثقة والشفافية</h3>
-        <p>سياسة استرجاع واضحة، فواتير رسمية، وتتبع الشحنة لحظة بلحظة. حقك محفوظ 100% من الطلب للتسليم.</p>
-      </div>
-      <div class="value-card">
-        <div class="icon">🇦🇪</div>
-        <h3>دعم المحلي</h3>
-        <p>80% من منتجاتنا من مصانع وحرفيين إماراتيين وعرب. نشتري منهم بسعر عادل ونساعدهم يوصلوا للعالمية.</p>
-      </div>
-      <div class="value-card">
-        <div class="icon">⚡</div>
-        <h3>السرعة</h3>
-        <p>تجهيز الطلب خلال 24 ساعة وشحن لجميع الإمارات خلال 1-2 يوم عمل. للخليج 3-5 أيام. للعالم 7-14 يوم.</p>
-      </div>
-      <div class="value-card">
-        <div class="icon">♻</div>
-        <h3>الاستدامة</h3>
-        <p>تغليف صديق للبيئة وقابل للتدوير 100%. ندعم الزراعة العضوية والممارسات الإنتاجية المستدامة.</p>
-      </div>
-      <div class="value-card">
-        <div class="icon">⭐</div>
-        <h3>التميز</h3>
-        <p>خدمة عملاء 7 أيام على الواتساب، وضمان الجودة على كل منتج نبيعه. رضاك هو مقياس نجاحنا الوحيد.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- منتجاتنا -->
   <div class="container" id="products">
     <h2 class="section-title">منتجاتنا المميزة</h2>
-    <p class="section-sub">تشكيلة مختارة من أفضل المنتجات</p>
-    
-    <div class="filters">
-      <button class="active">الكل</button>
-      <button>زيوت طبيعية</button>
-      <button>ملابس</button>
-      <button>مفروشات</button>
-    </div>
-
     <div class="grid">
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400" alt="زيت أرغان">
-        <div class="card-body">
-          <h3>زيت الأرغان المغربي الأصلي</h3>
-          <p>زيت طبيعي 100% للشعر والبشرة، معصور على البارد</p>
-          <div class="price">120 درهم</div>
-          <button class="btn">أضف للسلة</button>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400" alt="عباية">
-        <div class="card-body">
-          <h3>عباية خليجية مطرزة</h3>
-          <p>قماش كريب فاخر مع تطريز يدوي، مقاسات متعددة</p>
-          <div class="price">350 درهم</div>
-          <button class="btn">أضف للسلة</button>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=400" alt="كوفرتة">
+        <img src="images/product1.jpg" alt="كوفرتة قطن مصري">
         <div class="card-body">
           <h3>كوفرتة قطن مصري 100%</h3>
           <p>نسيج يدوي فاخر، ناعمة ومتينة، مقاس كينج</p>
           <div class="price">280 درهم</div>
-          <button class="btn">أضف للسلة</button>
+          <button class="add-to-cart" onclick="addToCart('كوفرتة قطن مصري 100%', 280, 'images/product1.jpg')">أضف للسلة</button>
         </div>
       </div>
-
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400" alt="زيت جوز الهند">
+        <img src="images/product2.jpg" alt="عباية خليجية">
         <div class="card-body">
-          <h3>زيت جوز الهند البكر</h3>
-          <p>عضوي معتمد، للطبخ والعناية بالشعر والبشرة</p>
-          <div class="price">85 درهم</div>
-          <button class="btn">أضف للسلة</button>
+          <h3>عباية خليجية مطرزة</h3>
+          <p>قماش كريب فاخر مع تطريز يدوي، مقاسات متعددة</p>
+          <div class="price">350 درهم</div>
+          <button class="add-to-cart" onclick="addToCart('عباية خليجية مطرزة', 350, 'images/product2.jpg')">أضف للسلة</button>
+        </div>
+      <div class="card">
+        <img src="images/product3.jpg" alt="زيت الأرغان">
+        <div class="card-body">
+          <h3>زيت الأرغان المغربي الأصلي</h3>
+          <p>زيت طبيعي 100% للشعر والبشرة، معصور على البارد</p>
+          <div class="price">120 درهم</div>
+          <button class="add-to-cart" onclick="addToCart('زيت الأرغان المغربي الأصلي', 120, 'images/product3.jpg')">أضف للسلة</button>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- لماذا تشتري منا -->
-  <div class="container">
-    <h2 class="section-title">لماذا تشتري من AMM Group؟</h2>
-    <div class="why-us">
-      <div class="why-item">
-        <div class="icon">🛡</div>
-        <h3>منتجات مضمونة 100%</h3>
-        <p>كل زيت عندنا له شهادة تحليل مخبري، والمفروشات مختومة "قطن مصري 100%". لو وصلت المنتج ومش زي الوصف، نرجعلك فلوسك كاملة بدون نقاش.</p>
-      </div>
-      <div class="why-item">
-        <div class="icon">🚚</div>
-        <h3>شحن سريع وآمن</h3>
-        <p>نتعامل مع أرامكس وسمسا وبريد الإمارات. تغليف محكم ضد الكسر والتسريب، مع رقم تتبع يوصلك على الواتساب فور الشحن لباب بيتك.</p>
-      </div>
-      <div class="why-item">
-        <div class="icon">⭐</div>
-        <h3>خبرة 20 سنة مش كلام</h3>
-        <p>مش متجر جديد نجرب فيه. احنا في السوق من 2004 وعارفين كل تفصيلة في الزيوت والأقمشة والشحن الدولي. خبرة تحميك من الغش.</p>
-      </div>
-      <div class="why-item">
-        <div class="icon">💬</div>
-        <h3>دعم فني حقيقي 7 أيام</h3>
-        <p>عندك استفسار عن استخدام زيت للشعر؟ مقاس العباية؟ طريقة غسل الكوفرتة؟ فريقنا على الواتساب يرد عليك خلال دقائق مش أيام.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- الشهادات -->
-  <div class="container">
-    <h2 class="section-title">شهاداتنا وتراخيصنا</h2>
-    <div class="certificates">
-      <div class="cert">
-        <div class="icon">📜</div>
-        <h4>رخصة تجارية</h4>
-        <p>إمارة الشارقة<br>رقم: 4413856.01</p>
-      </div>
-      <div class="cert">
-        <div class="icon">🌿</div>
-        <h4>عضوي معتمد</h4>
-        <p>للزيوت الطبيعية<br>شهادات تحليل</p>
-      </div>
-      <div class="cert">
-        <div class="icon">🔒</div>
-        <h4>SSL Secure</h4>
-        <p>دفع آمن 100%<br>حماية بياناتك</p>
-      </div>
-      <div class="cert">
-        <div class="icon">✅</div>
-        <h4>ضمان الجودة</h4>
-        <p>فحص قبل الشحن<br>استرجاع مضمون</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- الأرقام -->
-  <div class="stats">
-    <div class="stats-grid">
-      <div class="stat">
-        <h3>20+</h3>
-        <p>عام خبرة مؤسسية</p>
-      </div>
-      <div class="stat">
-        <h3>40%+</h3>
-        <p>زيادة تفاعل العملاء</p>
-      </div>
-      <div class="stat">
-        <h3>25%+</h3>
-        <p>معدل إتمام الشراء</p>
-      </div>
-      <div class="stat">
-        <h3>50+</h3>
-        <p>دولة نخدمها لوجستياً</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- CTA -->
-  <div class="cta-section">
-    <h2>جاهز تبدأ رحلتك معنا؟</h2>
-    <p>انضم لآلاف العملاء الراضين في 50+ دولة حول العالم</p>
-    <a href="#products" class="cta-btn">تصفح المنتجات الآن</a>
-  </div>
-
-  <!-- Footer -->
   <footer>
     <div class="footer-links">
-      <a href="privacy.html">سياسة الخصوصية</a>
-      <a href="refund.html">سياسة الاسترجاع</a>
-      <a href="shipping.html">الشحن والتوصيل</a>
-      <a href="terms.html">الشروط والأحكام</a>
-      <a href="contact.html">تواصل معنا</a>
+      <a href="/amm-shop/privacy.html">سياسة الخصوصية</a>
+      <a href="/amm-shop/refund.html">سياسة الاسترجاع</a>
+      <a href="/amm-shop/contact.html">تواصل معنا</a>
     </div>
-    <p>© 2026 AMM Group. جميع الحقوق محفوظة</p>
-    <p style="margin-top:10px; font-size:14px">الشارقة، الإمارات العربية المتحدة | واتساب: +971 50 812 8499</p>
+    <p>© 2026 AMM INTL Group. جميع الحقوق محفوظة</p>
+    <p style="margin-top:10px;font-size:14px">أم القيوين، الإمارات | واتساب: +971 50 812 8499</p>
   </footer>
-
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js');
-    }
-  </script>
+<script>
+let cart = JSON.parse(localStorage.getItem('ammCart')) || [];
+function updateCartUI() {
+  const cartItems = document.getElementById('cartItems');
+  const cartCount = document.getElementById('cartCount');
+  const cartTotal = document.getElementById('cartTotal');
+  const totalPrice = document.getElementById('totalPrice');
+  cartCount.textContent = cart.length;
+  if (cart.length === 0) {
+    cartItems.innerHTML = '<div class="empty-cart">السلة فارغة</div>';
+    cartTotal.style.display = 'none';
+    return;
+  }
+  cartTotal.style.display = 'block';
+  let total = 0;
+  cartItems.innerHTML = cart.map((item, index) => {
+    total += item.price;
+    return `<div class="cart-item"><img src="${item.image}" alt="${item.name}"><div class="cart-item-info"><h4>${item.name}</h4><p>${item.price} درهم</p><button class="remove-item" onclick="removeFromCart(${index})">حذف</button></div></div>`;
+  }).join('');
+  totalPrice.textContent = total + ' درهم';
+}
+function addToCart(name, price, image) {
+  cart.push({name, price, image});
+  localStorage.setItem('ammCart', JSON.stringify(cart));
+  updateCartUI();
+  alert(`تم إضافة "${name}" للسلة ✅`);
+}
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  localStorage.setItem('ammCart', JSON.stringify(cart));
+  updateCartUI();
+}
+function toggleCart() {
+  document.getElementById('cartSidebar').classList.toggle('active');
+  document.getElementById('overlay').classList.toggle('active');
+}
+function checkout() {
+  if (cart.length === 0) return;
+  let message = 'مرحباً AMM INTL Group، أريد طلب:%0A%0A';
+  let total = 0;
+  cart.forEach((item, i) => {
+    message += `${i+1}. ${item.name} - ${item.price} درهم%0A`;
+    total += item.price;
+  });
+  message += `%0Aالإجمالي: ${total} درهم`;
+  window.open(`https://wa.me/971508128499?text=${message}`, '_blank');
+}
+updateCartUI();
+</script>
 </body>
 </html>
