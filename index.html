@@ -90,7 +90,7 @@
     .stat h3{font-size:42px; margin-bottom:5px; color:#D4AF37; font-weight:800}
     .stat p{opacity:0.9}
 
-    /* Footer - تم إصلاحه */
+    /* Footer */
     footer{background:#0A192F; color:#aaa; padding:40px 20px; text-align:center; border-top:3px solid #D4AF37; clear:both; width:100%}
     footer a{color:#aaa; margin:0 12px; text-decoration:none; display:inline-block; margin-bottom:10px; transition:0.3s}
     footer a:hover{color:#D4AF37}
@@ -188,7 +188,7 @@
     <h2 class="section-title">منتجاتنا المميزة</h2>
     <p class="section-sub">جودة عالمية بأسعار تنافسية</p>
     <div class="grid">
-      <!-- Product 1 -->
+      <!-- Product 1 - عدّل اسم الصورة هنا -->
       <div class="card">
         <img src="images/product1.jpg" alt="كوفرتة قطن مصري">
         <div class="card-body">
@@ -198,7 +198,7 @@
           <button class="add-to-cart" onclick="addToCart('كوفرتة قطن مصري 100%', 280, 'images/product1.jpg')">أضف للسلة</button>
         </div>
       </div>
-      <!-- Product 2 -->
+      <!-- Product 2 - عدّل اسم الصورة هنا -->
       <div class="card">
         <img src="images/product2.jpg" alt="عباية خليجية">
         <div class="card-body">
@@ -208,7 +208,7 @@
           <button class="add-to-cart" onclick="addToCart('عباية خليجية مطرزة', 350, 'images/product2.jpg')">أضف للسلة</button>
         </div>
       </div>
-      <!-- Product 3 -->
+      <!-- Product 3 - عدّل اسم الصورة هنا -->
       <div class="card">
         <img src="images/product3.jpg" alt="زيت الأرغان">
         <div class="card-body">
@@ -243,7 +243,7 @@
     </div>
   </div>
 
-  <!-- Footer - دلوقتي في مكانه الصح -->
+  <!-- Footer -->
   <footer>
     <div class="footer-links">
       <a href="/amm-shop/privacy.html">سياسة الخصوصية</a>
@@ -266,7 +266,6 @@ function updateCartUI() {
   const cartTotal = document.getElementById('cartTotal');
   const totalPrice = document.getElementById('totalPrice');
   
-  // حساب إجمالي القطع
   let totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
   cartCount.textContent = totalQty;
   
@@ -301,7 +300,6 @@ function updateCartUI() {
 }
 
 function addToCart(name, price, image) {
-  // لو المنتج موجود زود الكمية
   const existing = cart.find(item => item.name === name);
   if (existing) {
     existing.qty++;
@@ -347,7 +345,6 @@ function checkout() {
   window.open(`https://wa.me/971508128499?text=${message}`, '_blank');
 }
 
-// شغل السلة لما الصفحة تحمل
 updateCartUI();
 </script>
 
