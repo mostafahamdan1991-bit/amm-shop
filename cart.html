@@ -150,7 +150,7 @@
             <span>${total >= 300 ? total : total + 20} درهم</span>
           </div>
         </div>
-        <button class="btn-checkout" onclick="checkout()">إتمام الطلب عبر واتساب</button>
+        <button class="btn-checkout" onclick="checkout()">إتمام الطلب</button>
         <a href="index.html#products" class="btn-continue" style="display:block; margin-top:15px">متابعة التسوق</a>
       `;
       
@@ -164,17 +164,7 @@
     }
     
     function checkout() {
-      let message = 'مرحبا، عايز أطلب:\n\n';
-      let total = 0;
-      cart.forEach((item, i) => {
-        message += `${i+1}. ${item.name} - ${item.price} درهم\n`;
-        total += item.price;
-      });
-      message += `\nالإجمالي: ${total >= 300 ? total : total + 20} درهم`;
-      message += `\nالشحن: ${total >= 300 ? 'مجاني' : '20 درهم'}`;
-      
-      const whatsappUrl = 'https://wa.me/971508128499?text=' + encodeURIComponent(message);
-      window.open(whatsappUrl, '_blank');
+      window.location.href = 'checkout.html';
     }
     
     displayCart();
