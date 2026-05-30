@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إتمام الطلب - AMM Group</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#D4AF37">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="amm-group-logo-192.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0; padding:0; box-sizing:border-box}
+    body{font-family:'Cairo',sans-serif; background:#fafafa; color:#222; line-height:1.7}
+    
+    nav{background:#0A192F; padding:15px 0; position:sticky; top:0; z-index:1000; box-shadow:0 2px 20px rgba(10,25,47,0.4)}
+    nav .wrap{max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; padding:0 20px; flex-wrap:wrap}
+    nav .logo{display:flex; align-items:center; gap:12px}
+    nav .logo img{height:48px}
+    nav .logo h2{color:#D4AF37; font-size:22px; margin:0}
+    nav .links a{color:#FFFFFF; margin:0 12px; text-decoration:none; font-weight:600}
+    nav .links a:hover{color:#D4AF37}
+    
+    .hero-small{background:linear-gradient(135deg,#0A192F,#233554); color:white; text-align:center; padding:60px 20px}
+    .hero-small h1{font-size:42px; margin-bottom:10px; color:#D4AF37}
+    
+    .container{max-width:900px; margin:50px auto; background:white; padding:40px; border-radius:12px; box-shadow:0 2px 15px rgba(0,0,0,0.06); border:1px solid #e5e7eb}
+    
+    .order-summary{background:#FFF9E6; padding:25px; border-radius:8px; margin-bottom:30px; border-right:4px solid #D4AF37}
+    .order-summary h3{color:#0A192F; margin-bottom:15px}
+    .order-item{display:flex; justify-content:space-between; margin:10px 0; font-size:15px}
+    .total-row{border-top:2px solid #D4AF37; padding-top:15px; margin-top:15px; font-size:22px; font-weight:800; color:#0A192F}
+    
+    h2{color:#0A192F; margin:30px 0 20px 0; font-size:24px; border-right:4px solid #D4AF37; padding-right:12px}
+    label{display:block; margin-bottom:8px; font-weight:600; color:#333}
+    input,textarea,select{width:100%; padding:14px; margin-bottom:18px; border:2px solid #e5e7eb; border-radius:8px; font-family:'Cairo'; font-size:15px}
+    input:focus,textarea:focus,select:focus{outline:none; border-color:#D4AF37}
+    
+    .payment-methods{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; margin:20px 0}
+    .payment-option{border:2px solid #e5e7eb; padding:20px; border-radius:8px; cursor:pointer; text-align:center; transition:0.3s}
+    .payment-option:hover{border-color:#D4AF37}
+    .payment-option.selected{border-color:#D4AF37; background:#FFF9E6}
+    .payment-option input{width:auto; margin:0}
+    
+    .btn-submit{background:#D4AF37; color:#0A192F; padding:16px 40px; border:none; border-radius:8px; cursor:pointer; font-family:'Cairo'; font-weight:700; font-size:18px; width:100%; margin-top:20px}
+    .btn-submit:hover{background:#B8941F}
+    
+    .info-box{background:#e3f2fd; padding:20px; border-right:4px solid #0d47a1; margin:20px 0; border-radius:6px; font-size:14px}
+    
+    footer{background:#0A192F; color:#aaa; padding:40px 20px; text-align:center; border-top:3px solid #D4AF37; margin-top:60px}
+    footer a{color:#aaa; margin:0 12px; text-decoration:none}
+    footer a:hover{color:#D4AF37}
+    
+    @media(max-width:768px){
+      .container{padding:25px 20px; margin:30px 15px}
+      nav .wrap{justify-content:center; gap:15px}
+      nav .logo h2{display:none}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap">
+      <div class="logo">
+        <img src="amm-group-logo.png" alt="AMM Group">
+        <h2>AMM Group</h2>
+      </div>
+      <div class="links">
+        <a href="index.html">الرئيسية</a>
+        <a href="index.html#products">المنتجات</a>
+        <a href="cart.html">السلة</a>
+        <a href="contact.html">تواصل</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero-small">
+    <h1>إتمام الطلب</h1>
+    <p>اكتب بياناتك وهنتواصل معاك على واتساب لتأكيد الطلب</p>
+  </div>
+
+  <div class="container">
+    <div class="order-summary" id="order-summary">
+      <h3>ملخص طلبك</h3>
+      <!-- هيتحط هنا بالجافاسكريبت -->
+    </div>
+
+    <form id="checkout-form">
+      <h2>بيانات التوصيل</h2>
+      
+      <label>الاسم الكامل *</label>
+      <input type="text" id="name" required placeholder="اسمك الثلاثي">
+      
+      <label>رقم الواتساب *</label>
+      <input type="tel" id="phone" required placeholder="971508128499" value="971">
+      
+      <label>البريد الإلكتروني</label>
+      <input type="email" id="email" placeholder="example@email.com">
+      
+      <label>الإمارة *</label>
+      <select id="city" required>
+        <option value="">اختر الإمارة</option>
+        <option value="أبوظبي">أبوظبي</option>
+        <option value="دبي">دبي</option>
+        <option value="الشارقة">الشارقة</option>
+        <option value="عجمان">عجمان</option>
+        <option value="أم القيوين">أم القيوين</option>
+        <option value="رأس الخيمة">رأس الخيمة</option>
+        <option value="الفجيرة">الفجيرة</option>
+      </select>
+      
+      <label>العنوان بالتفصيل *</label>
+      <textarea id="address" rows="3" required placeholder="المنطقة، الشارع، رقم البناية، رقم الشقة"></textarea>
+      
+      <h2>طريقة الدفع</h2>
+      <div class="payment-methods">
+        <div class="payment-option" onclick="selectPayment('cod')">
+          <input type="radio" name="payment" value="cod" id="cod" checked>
+          <label for="cod">💵 الدفع عند الاستلام</label>
+        </div>
+        <div class="payment-option" onclick="selectPayment('bank')">
+          <input type="radio" name="payment" value="bank" id="bank">
+          <label for="bank">🏦 تحويل بنكي</label>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <strong>ملاحظة:</strong> بعد إرسال الطلب، هيفتح واتساب برسالة جاهزة فيها كل التفاصيل. هنأكد معاك الطلب خلال 30 دقيقة.
+      </div>
+      
+      <label>ملاحظات إضافية</label>
+      <textarea id="notes" rows="3" placeholder="أي تعليمات خاصة للتوصيل..."></textarea>
+      
+      <button type="submit" class="btn-submit">تأكيد الطلب عبر واتساب</button>
+    </form>
+  </div>
+
+  <footer>
+    <div>
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <a href="refund.html">سياسة الاسترجاع</a>
+      <a href="shipping.html">الشحن والتوصيل</a>
+      <a href="terms.html">الشروط والأحكام</a>
+      <a href="contact.html">تواصل معنا</a>
+    </div>
+    <p style="margin-top:15px">© 2026 AMM Group. جميع الحقوق محفوظة</p>
+  </footer>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem('amm_cart')) || [];
+    
+    function displayOrderSummary() {
+      const container = document.getElementById('order-summary');
+      
+      if(cart.length === 0) {
+        window.location.href = 'cart.html';
+        return;
+      }
+      
+      let total = 0;
+      let itemsHTML = '';
+      
+      cart.forEach(item => {
+        total += item.price * item.qty;
+        itemsHTML += `
+          <div class="order-item">
+            <span>${item.name} × ${item.qty}</span>
+            <span>${item.price * item.qty} درهم</span>
+          </div>
+        `;
+      });
+      
+      const shipping = total >= 300 ? 0 : 20;
+      const finalTotal = total + shipping;
+      
+      container.innerHTML = `
+        <h3>ملخص طلبك</h3>
+        ${itemsHTML}
+        <div class="order-item">
+          <span>الشحن:</span>
+          <span>${shipping === 0 ? 'مجاني 🎁' : shipping + ' درهم'}</span>
+        </div>
+        <div class="order-item total-row">
+          <span>الإجمالي:</span>
+          <span>${finalTotal} درهم</span>
+        </div>
+      `;
+    }
+    
+    function selectPayment(method) {
+      document.querySelectorAll('.payment-option').forEach(el => el.classList.remove('selected'));
+      event.currentTarget.classList.add('selected');
+      document.getElementById(method).checked = true;
+    }
+    
+    document.getElementById('checkout-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const city = document.getElementById('city').value;
+      const address = document.getElementById('address').value;
+      const notes = document.getElementById('notes').value;
+      const payment = document.querySelector('input[name="payment"]:checked').value;
+      
+      let total = 0;
+      let message = `*طلب جديد من AMM Group* 🛍️\n\n`;
+      message += `*بيانات العميل:*\n`;
+      message += `الاسم: ${name}\n`;
+      message += `الواتساب: ${phone}\n`;
+      message += `الإيميل: ${email || 'غير محدد'}\n`;
+      message += `الإمارة: ${city}\n`;
+      message += `العنوان: ${address}\n\n`;
+      message += `*المنتجات:*\n`;
+      
+      cart.forEach((item, i) => {
+        message += `${i+1}. ${item.name} × ${item.qty} = ${item.price * item.qty} درهم\n`;
+        total += item.price * item.qty;
+      });
+      
+      const shipping = total >= 300 ? 0 : 20;
+      const finalTotal = total + shipping;
+      
+      message += `\n*المجموع الفرعي:* ${total} درهم\n`;
+      message += `*الشحن:* ${shipping === 0 ? 'مجاني 🎁' : shipping + ' درهم'}\n`;
+      message += `*الإجمالي:* ${finalTotal} درهم\n`;
+      message += `*طريقة الدفع:* ${payment === 'cod' ? 'الدفع عند الاستلام' : 'تحويل بنكي'}\n`;
+      
+      if(notes) message += `\n*ملاحظات:* ${notes}\n`;
+      
+      message += `\nبرجاء تأكيد الطلب 🙏`;
+      
+      const whatsappUrl = 'https://wa.me/971508128499?text=' + encodeURIComponent(message);
+      
+      // مسح السلة بعد الطلب
+      localStorage.removeItem('amm_cart');
+      
+      window.open(whatsappUrl, '_blank');
+      
+      setTimeout(() => {
+        alert('تم إرسال طلبك بنجاح! هنفتح واتساب دلوقتي لتأكيد الطلب معاك ✅');
+        window.location.href = 'index.html';
+      }, 500);
+    });
+    
+    displayOrderSummary();
+    document.querySelector('.payment-option').classList.add('selected');
+  </script>
+</body>
+</html>
