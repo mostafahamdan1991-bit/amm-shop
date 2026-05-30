@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سلة التسوق - AMM Group</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#D4AF37">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="amm-group-logo-192.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0; padding:0; box-sizing:border-box}
+    body{font-family:'Cairo',sans-serif; background:#fafafa; color:#222; line-height:1.7}
+    
+    nav{background:#0A192F; padding:15px 0; position:sticky; top:0; z-index:1000; box-shadow:0 2px 20px rgba(10,25,47,0.4)}
+    nav .wrap{max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; padding:0 20px; flex-wrap:wrap}
+    nav .logo{display:flex; align-items:center; gap:12px}
+    nav .logo img{height:48px}
+    nav .logo h2{color:#D4AF37; font-size:22px; margin:0}
+    nav .links a{color:#FFFFFF; margin:0 12px; text-decoration:none; font-weight:600}
+    nav .links a:hover{color:#D4AF37}
+    
+    .hero-small{background:linear-gradient(135deg,#0A192F,#233554); color:white; text-align:center; padding:60px 20px}
+    .hero-small h1{font-size:42px; margin-bottom:10px; color:#D4AF37}
+    
+    .container{max-width:900px; margin:50px auto; background:white; padding:40px; border-radius:12px; box-shadow:0 2px 15px rgba(0,0,0,0.06); border:1px solid #e5e7eb}
+    
+    .cart-item{display:flex; gap:20px; padding:20px 0; border-bottom:1px solid #e5e7eb; align-items:center}
+    .cart-item img{width:100px; height:100px; object-fit:cover; border-radius:8px}
+    .cart-item-info{flex:1}
+    .cart-item-info h3{color:#0A192F; font-size:18px; margin-bottom:5px}
+    .cart-item-info .price{color:#D4AF37; font-weight:700; font-size:20px}
+    .remove-btn{background:#dc2626; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer; font-family:'Cairo'; font-weight:600}
+    .remove-btn:hover{background:#b91c1c}
+    
+    .cart-summary{background:#FFF9E6; padding:25px; border-radius:8px; margin:30px 0; border-right:4px solid #D4AF37}
+    .cart-summary h3{color:#0A192F; margin-bottom:15px}
+    .summary-row{display:flex; justify-content:space-between; margin:10px 0; font-size:16px}
+    .summary-row.total{font-size:24px; font-weight:800; color:#0A192F; border-top:2px solid #D4AF37; padding-top:15px; margin-top:15px}
+    
+    .btn-checkout{background:#D4AF37; color:#0A192F; padding:16px 40px; border:none; border-radius:8px; cursor:pointer; font-family:'Cairo'; font-weight:700; font-size:18px; width:100%; margin-top:20px}
+    .btn-checkout:hover{background:#B8941F}
+    .btn-continue{display:inline-block; background:#e5e7eb; color:#0A192F; padding:12px 30px; text-decoration:none; border-radius:8px; font-weight:600; text-align:center}
+    
+    .empty-cart{text-align:center; padding:60px 20px}
+    .empty-cart h2{color:#666; margin-bottom:20px}
+    
+    footer{background:#0A192F; color:#aaa; padding:40px 20px; text-align:center; border-top:3px solid #D4AF37; margin-top:60px}
+    footer a{color:#aaa; margin:0 12px; text-decoration:none}
+    footer a:hover{color:#D4AF37}
+    
+    @media(max-width:768px){
+      .container{padding:25px 20px; margin:30px 15px}
+      .cart-item{flex-direction:column; text-align:center}
+      nav .wrap{justify-content:center; gap:15px}
+      nav .logo h2{display:none}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap">
+      <div class="logo">
+        <img src="amm-group-logo.png" alt="AMM Group">
+        <h2>AMM Group</h2>
+      </div>
+      <div class="links">
+        <a href="index.html">الرئيسية</a>
+        <a href="index.html#products">المنتجات</a>
+        <a href="gallery.html">معرض الصور</a>
+        <a href="about.html">من نحن</a>
+        <a href="contact.html">تواصل</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero-small">
+    <h1>سلة التسوق</h1>
+    <p>راجع منتجاتك قبل إتمام الطلب</p>
+  </div>
+
+  <div class="container" id="cart-container">
+    <!-- المنتجات هتظهر هنا بالجافاسكريبت -->
+  </div>
+
+  <footer>
+    <div>
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <a href="refund.html">سياسة الاسترجاع</a>
+      <a href="shipping.html">الشحن والتوصيل</a>
+      <a href="terms.html">الشروط والأحكام</a>
+      <a href="contact.html">تواصل معنا</a>
+    </div>
+    <p style="margin-top:15px">© 2026 AMM Group. جميع الحقوق محفوظة</p>
+  </footer>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem('amm_cart')) || [];
+    
+    function displayCart() {
+      const container = document.getElementById('cart-container');
+      
+      if(cart.length === 0) {
+        container.innerHTML = `
+          <div class="empty-cart">
+            <h2>🛒 السلة فاضية</h2>
+            <p style="color:#666; margin:20px 0">مفيش منتجات في السلة لسه</p>
+            <a href="index.html#products" class="btn-continue">تصفح المنتجات</a>
+          </div>
+        `;
+        return;
+      }
+      
+      let cartHTML = '';
+      let total = 0;
+      
+      cart.forEach((item, index) => {
+        total += item.price * item.qty;
+        cartHTML += `
+          <div class="cart-item">
+            <img src="${item.img}" alt="${item.name}">
+            <div class="cart-item-info">
+              <h3>${item.name}</h3>
+              <div class="price">${item.price} درهم</div>
+              <p style="color:#666; font-size:14px">الكمية: ${item.qty}</p>
+            </div>
+            <button class="remove-btn" onclick="removeItem(${index})">حذف</button>
+          </div>
+        `;
+      });
+      
+      cartHTML += `
+        <div class="cart-summary">
+          <h3>ملخص الطلب</h3>
+          <div class="summary-row">
+            <span>عدد المنتجات:</span>
+            <span>${cart.length}</span>
+          </div>
+          <div class="summary-row">
+            <span>المجموع الفرعي:</span>
+            <span>${total} درهم</span>
+          </div>
+          <div class="summary-row">
+            <span>الشحن:</span>
+            <span>${total >= 300 ? 'مجاني 🎁' : '20 درهم'}</span>
+          </div>
+          <div class="summary-row total">
+            <span>الإجمالي:</span>
+            <span>${total >= 300 ? total : total + 20} درهم</span>
+          </div>
+        </div>
+        <button class="btn-checkout" onclick="checkout()">إتمام الطلب عبر واتساب</button>
+        <a href="index.html#products" class="btn-continue" style="display:block; margin-top:15px">متابعة التسوق</a>
+      `;
+      
+      container.innerHTML = cartHTML;
+    }
+    
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem('amm_cart', JSON.stringify(cart));
+      displayCart();
+    }
+    
+    function checkout() {
+      let message = 'مرحبا، عايز أطلب:\n\n';
+      let total = 0;
+      cart.forEach((item, i) => {
+        message += `${i+1}. ${item.name} - ${item.price} درهم\n`;
+        total += item.price;
+      });
+      message += `\nالإجمالي: ${total >= 300 ? total : total + 20} درهم`;
+      message += `\nالشحن: ${total >= 300 ? 'مجاني' : '20 درهم'}`;
+      
+      const whatsappUrl = 'https://wa.me/971508128499?text=' + encodeURIComponent(message);
+      window.open(whatsappUrl, '_blank');
+    }
+    
+    displayCart();
+  </script>
+</body>
+</html>
