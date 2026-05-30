@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>سلة التسوق - AMM Group</title>
+  <title>إتمام الطلب - AMM Group</title>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#D4AF37">
   <meta name="mobile-web-app-capable" content="yes">
@@ -24,35 +24,49 @@
     .hero-small{background:linear-gradient(135deg,#0A192F,#233554); color:white; text-align:center; padding:60px 20px}
     .hero-small h1{font-size:42px; margin-bottom:10px; color:#D4AF37}
     
-    .container{max-width:900px; margin:50px auto; background:white; padding:40px; border-radius:12px; box-shadow:0 2px 15px rgba(0,0,0,0.06); border:1px solid #e5e7eb}
+    .container{max-width:1000px; margin:50px auto; padding:0 20px}
+    .checkout-grid{display:grid; grid-template-columns:1fr 1fr; gap:30px}
     
-    .cart-item{display:flex; gap:20px; padding:20px 0; border-bottom:1px solid #e5e7eb; align-items:center}
-    .cart-item img{width:100px; height:100px; object-fit:cover; border-radius:8px}
-    .cart-item-info{flex:1}
-    .cart-item-info h3{color:#0A192F; font-size:18px; margin-bottom:5px}
-    .cart-item-info .price{color:#D4AF37; font-weight:700; font-size:20px}
-    .remove-btn{background:#dc2626; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer; font-family:'Cairo'; font-weight:600}
-    .remove-btn:hover{background:#b91c1c}
+    .box{background:white; padding:30px; border-radius:12px; box-shadow:0 2px 15px rgba(0,0,0,0.06); border:1px solid #e5e7eb}
+    .box h2{color:#0A192F; margin-bottom:20px; font-size:24px; border-right:4px solid #D4AF37; padding-right:12px}
     
-    .cart-summary{background:#FFF9E6; padding:25px; border-radius:8px; margin:30px 0; border-right:4px solid #D4AF37}
-    .cart-summary h3{color:#0A192F; margin-bottom:15px}
-    .summary-row{display:flex; justify-content:space-between; margin:10px 0; font-size:16px}
-    .summary-row.total{font-size:24px; font-weight:800; color:#0A192F; border-top:2px solid #D4AF37; padding-top:15px; margin-top:15px}
+    label{display:block; margin:15px 0 5px; font-weight:600; color:#333}
+    input,textarea,select{width:100%; padding:14px; border:2px solid #e5e7eb; border-radius:8px; font-family:'Cairo'; font-size:15px}
+    input:focus,textarea:focus,select:focus{outline:none; border-color:#D4AF37}
     
-    .btn-checkout{background:#D4AF37; color:#0A192F; padding:16px 40px; border:none; border-radius:8px; cursor:pointer; font-family:'Cairo'; font-weight:700; font-size:18px; width:100%; margin-top:20px}
-    .btn-checkout:hover{background:#B8941F}
-    .btn-continue{display:inline-block; background:#e5e7eb; color:#0A192F; padding:12px 30px; text-decoration:none; border-radius:8px; font-weight:600; text-align:center}
+    .order-item{display:flex; gap:15px; padding:15px 0; border-bottom:1px solid #e5e7eb}
+    .order-item img{width:60px; height:60px; object-fit:cover; border-radius:6px}
+    .order-item-info{flex:1}
+    .order-item-info h4{color:#0A192F; font-size:16px; margin-bottom:3px}
+    .order-item-info p{color:#D4AF37; font-weight:700}
     
-    .empty-cart{text-align:center; padding:60px 20px}
-    .empty-cart h2{color:#666; margin-bottom:20px}
+    .summary-row{display:flex; justify-content:space-between; margin:12px 0; font-size:16px}
+    .summary-row.total{font-size:22px; font-weight:800; color:#0A192F; border-top:2px solid #D4AF37; padding-top:15px; margin-top:15px}
+    
+    .btn-submit{background:#D4AF37; color:#0A192F; padding:16px; border:none; border-radius:8px; cursor:pointer; font-family:'Cairo'; font-weight:700; font-size:18px; width:100%; margin-top:20px}
+    .btn-submit:hover{background:#B8941F}
+    
+    .payment-method{display:flex; gap:10px; margin:15px 0}
+    .payment-option{flex:1; padding:15px; border:2px solid #e5e7eb; border-radius:8px; text-align:center; cursor:pointer; transition:0.3s}
+    .payment-option.selected{border-color:#D4AF37; background:#FFF9E6}
+    .payment-option input{display:none}
+    
+    .bank-details{background:#e3f2fd; padding:20px; border-radius:8px; margin:15px 0; border-right:4px solid #0d47a1; display:none}
+    .bank-details.show{display:block}
+    .bank-details h4{color:#0d47a1; margin-bottom:10px}
+    .bank-details p{margin:8px 0; font-size:15px}
+    .bank-details strong{color:#0A192F}
+    
+    .success-message{background:#d4edda; color:#155724; padding:20px; border-radius:8px; text-align:center; margin:20px 0; border-right:4px solid #28a745; display:none}
+    .success-message.show{display:block}
     
     footer{background:#0A192F; color:#aaa; padding:40px 20px; text-align:center; border-top:3px solid #D4AF37; margin-top:60px}
     footer a{color:#aaa; margin:0 12px; text-decoration:none}
     footer a:hover{color:#D4AF37}
     
     @media(max-width:768px){
-      .container{padding:25px 20px; margin:30px 15px}
-      .cart-item{flex-direction:column; text-align:center}
+      .checkout-grid{grid-template-columns:1fr}
+      .container{padding:0 15px}
       nav .wrap{justify-content:center; gap:15px}
       nav .logo h2{display:none}
     }
@@ -68,20 +82,94 @@
       <div class="links">
         <a href="index.html">الرئيسية</a>
         <a href="index.html#products">المنتجات</a>
-        <a href="gallery.html">معرض الصور</a>
-        <a href="about.html">من نحن</a>
+        <a href="cart.html">السلة</a>
         <a href="contact.html">تواصل</a>
       </div>
     </div>
   </nav>
 
   <div class="hero-small">
-    <h1>سلة التسوق</h1>
-    <p>راجع منتجاتك قبل إتمام الطلب</p>
+    <h1>إتمام الطلب</h1>
+    <p>املأ بياناتك وهنأكد طلبك</p>
   </div>
 
-  <div class="container" id="cart-container">
-    <!-- المنتجات هتظهر هنا بالجافاسكريبت -->
+  <div class="container">
+    <div class="checkout-grid">
+      
+      <!-- بيانات العميل -->
+      <div class="box">
+        <h2>بيانات التوصيل</h2>
+        <form id="checkout-form">
+          <label>الاسم الكامل *</label>
+          <input type="text" id="name" required placeholder="اسمك الثلاثي">
+          
+          <label>رقم الواتساب *</label>
+          <input type="tel" id="phone" required placeholder="+971 50 123 4567">
+          
+          <label>البريد الإلكتروني *</label>
+          <input type="email" id="email" required placeholder="example@email.com">
+          
+          <label>الإمارة *</label>
+          <select id="city" required>
+            <option value="">اختر الإمارة</option>
+            <option value="أبوظبي">أبوظبي</option>
+            <option value="دبي">دبي</option>
+            <option value="الشارقة">الشارقة</option>
+            <option value="عجمان">عجمان</option>
+            <option value="أم القيوين">أم القيوين</option>
+            <option value="رأس الخيمة">رأس الخيمة</option>
+            <option value="الفجيرة">الفجيرة</option>
+          </select>
+          
+          <label>العنوان بالتفصيل *</label>
+          <textarea id="address" rows="3" required placeholder="المنطقة، الشارع، رقم البناية، رقم الشقة"></textarea>
+          
+          <label>طريقة الدفع</label>
+          <div class="payment-method">
+            <label class="payment-option selected" onclick="selectPayment('cod')">
+              <input type="radio" name="payment" value="cod" id="cod" checked>
+              <div>💵</div>
+              <div>عند الاستلام</div>
+            </label>
+            <label class="payment-option" onclick="selectPayment('bank')">
+              <input type="radio" name="payment" value="bank" id="bank">
+              <div>🏦</div>
+              <div>تحويل بنكي</div>
+            </label>
+          </div>
+          
+          <!-- بيانات الحساب البنكي - تظهر لما يختار تحويل بنكي -->
+          <div class="bank-details" id="bank-details">
+            <h4>🏦 بيانات الحساب البنكي</h4>
+            <p><strong>اسم البنك:</strong> بنك الإمارات دبي الوطني</p>
+            <p><strong>اسم الحساب:</strong> AMM INTL Group</p>
+            <p><strong>رقم الحساب:</strong> 0123456789012</p>
+            <p><strong>IBAN:</strong> AE070260001234567890123</p>
+            <p><strong>Swift Code:</strong> EBILAEAD</p>
+            <p style="margin-top:15px; color:#d32f2f; font-weight:600">⚠️ برجاء إرسال صورة إيصال التحويل على واتساب +971 50 812 8499 بعد الدفع</p>
+          </div>
+          
+          <label>ملاحظات إضافية</label>
+          <textarea id="notes" rows="2" placeholder="أي تعليمات خاصة بالتوصيل"></textarea>
+          
+          <button type="submit" class="btn-submit">تأكيد الطلب</button>
+        </form>
+        
+        <div class="success-message" id="success-message">
+          <h3>✅ تم استلام طلبك بنجاح!</h3>
+          <p>هنكلمك على واتساب خلال 30 دقيقة لتأكيد الطلب</p>
+          <p style="margin-top:10px">رقم الطلب: <strong id="order-number"></strong></p>
+        </div>
+      </div>
+      
+      <!-- ملخص الطلب -->
+      <div class="box">
+        <h2>ملخص طلبك</h2>
+        <div id="order-items"></div>
+        <div id="order-summary"></div>
+      </div>
+      
+    </div>
   </div>
 
   <footer>
@@ -98,76 +186,124 @@
   <script>
     let cart = JSON.parse(localStorage.getItem('amm_cart')) || [];
     
-    function displayCart() {
-      const container = document.getElementById('cart-container');
+    function displayOrder() {
+      const itemsDiv = document.getElementById('order-items');
+      const summaryDiv = document.getElementById('order-summary');
       
       if(cart.length === 0) {
-        container.innerHTML = `
-          <div class="empty-cart">
-            <h2>🛒 السلة فاضية</h2>
-            <p style="color:#666; margin:20px 0">مفيش منتجات في السلة لسه</p>
-            <a href="index.html#products" class="btn-continue">تصفح المنتجات</a>
-          </div>
-        `;
+        window.location.href = 'cart.html';
         return;
       }
       
-      let cartHTML = '';
+      let itemsHTML = '';
       let total = 0;
       
-      cart.forEach((item, index) => {
+      cart.forEach(item => {
         total += item.price * item.qty;
-        cartHTML += `
-          <div class="cart-item">
+        itemsHTML += `
+          <div class="order-item">
             <img src="${item.img}" alt="${item.name}">
-            <div class="cart-item-info">
-              <h3>${item.name}</h3>
-              <div class="price">${item.price} درهم</div>
-              <p style="color:#666; font-size:14px">الكمية: ${item.qty}</p>
+            <div class="order-item-info">
+              <h4>${item.name}</h4>
+              <p>${item.price} درهم × ${item.qty}</p>
             </div>
-            <button class="remove-btn" onclick="removeItem(${index})">حذف</button>
           </div>
         `;
       });
       
-      cartHTML += `
-        <div class="cart-summary">
-          <h3>ملخص الطلب</h3>
-          <div class="summary-row">
-            <span>عدد المنتجات:</span>
-            <span>${cart.length}</span>
-          </div>
-          <div class="summary-row">
-            <span>المجموع الفرعي:</span>
-            <span>${total} درهم</span>
-          </div>
-          <div class="summary-row">
-            <span>الشحن:</span>
-            <span>${total >= 300 ? 'مجاني 🎁' : '20 درهم'}</span>
-          </div>
-          <div class="summary-row total">
-            <span>الإجمالي:</span>
-            <span>${total >= 300 ? total : total + 20} درهم</span>
-          </div>
-        </div>
-        <button class="btn-checkout" onclick="checkout()">إتمام الطلب</button>
-        <a href="index.html#products" class="btn-continue" style="display:block; margin-top:15px">متابعة التسوق</a>
-      `;
+      const shipping = total >= 300 ? 0 : 20;
+      const grandTotal = total + shipping;
       
-      container.innerHTML = cartHTML;
+      itemsDiv.innerHTML = itemsHTML;
+      summaryDiv.innerHTML = `
+        <div class="summary-row">
+          <span>المجموع الفرعي:</span>
+          <span>${total} درهم</span>
+        </div>
+        <div class="summary-row">
+          <span>الشحن:</span>
+          <span>${shipping === 0 ? 'مجاني 🎁' : shipping + ' درهم'}</span>
+        </div>
+        <div class="summary-row total">
+          <span>الإجمالي:</span>
+          <span>${grandTotal} درهم</span>
+        </div>
+      `;
     }
     
-    function removeItem(index) {
-      cart.splice(index, 1);
-      localStorage.setItem('amm_cart', JSON.stringify(cart));
-      displayCart();
+    function selectPayment(method) {
+      document.querySelectorAll('.payment-option').forEach(option => {
+        option.classList.remove('selected');
+      });
+      event.currentTarget.classList.add('selected');
+      document.getElementById(method).checked = true;
+      
+      // إظهار/إخفاء بيانات البنك
+      const bankDetails = document.getElementById('bank-details');
+      if(method === 'bank') {
+        bankDetails.classList.add('show');
+      } else {
+        bankDetails.classList.remove('show');
+      }
     }
     
-    function checkout() {
-      window.location.href = 'checkout.html';
-    }
+    document.getElementById('checkout-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const city = document.getElementById('city').value;
+      const address = document.getElementById('address').value;
+      const payment = document.querySelector('input[name="payment"]:checked').value;
+      const notes = document.getElementById('notes').value;
+      
+      let total = 0;
+      cart.forEach(item => {
+        total += item.price * item.qty;
+      });
+      
+      const shipping = total >= 300 ? 0 : 20;
+      const grandTotal = total + shipping;
+      const orderNumber = 'AMM' + Date.now();
+      
+      // هنا تقدر تبعت البيانات لسيرفر أو إيميل
+      // حالياً هنعرض رسالة نجاح بس
+      
+      // تفريغ السلة
+      localStorage.removeItem('amm_cart');
+      
+      // إخفاء الفورم وإظهار رسالة النجاح
+      document.getElementById('checkout-form').style.display = 'none';
+      document.getElementById('success-message').classList.add('show');
+      document.getElementById('order-number').textContent = orderNumber;
+      
+      // حفظ الطلب في localStorage مؤقتاً
+      const order = {
+        orderNumber: orderNumber,
+        name: name,
+        phone: phone,
+        email: email,
+        city: city,
+        address: address,
+        payment: payment,
+        notes: notes,
+        items: cart,
+        total: grandTotal,
+        date: new Date().toISOString()
+      };
+      
+      let orders = JSON.parse(localStorage.getItem('amm_orders')) || [];
+      orders.push(order);
+      localStorage.setItem('amm_orders', JSON.stringify(orders));
+      
+      // تحويل للصفحة الرئيسية بعد 5 ثواني
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 5000);
+    });
     
-    displayCart();
+    displayOrder();
   </script>
 </body>
 </html>
