@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AMM INTL Group | التجارة الإلكترونية العالمية</title>
   <meta name="description" content="AMM INTL Group - زيوت طبيعية للشعر والبشرة، ملابس جاهزة، مفروشات وكوفرتات قطن 100% يدوية من الإمارات">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#D4AF37">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="amm-group-logo-192.png">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     *{margin:0; padding:0; box-sizing:border-box}
@@ -16,9 +20,10 @@
     nav .logo{display:flex; align-items:center; gap:12px}
     nav .logo img{height:50px}
     nav .logo h2{color:#D4AF37; font-size:22px; margin:0; font-weight:700}
-    nav .links{display:flex; align-items:center; gap:20px}
+    nav .links{display:flex; align-items:center; gap:20px; flex-wrap:wrap}
     nav .links a{color:#FFFFFF; text-decoration:none; font-weight:600; transition:0.3s}
     nav .links a:hover{color:#D4AF37}
+    #cart-link{color:#D4AF37; font-weight:700}
 
     /* Hero */
     .hero{background:linear-gradient(135deg,#0A192F,#233554); color:white; text-align:center; padding:80px 20px}
@@ -50,9 +55,9 @@
     .card-body h3{color:#0A192F; font-size:20px; margin-bottom:10px; font-weight:700; min-height:60px}
     .card-body p{color:#666; font-size:15px; margin-bottom:15px}
     .price{color:#D4AF37; font-size:22px; font-weight:800; margin:15px 0}
-    .buy-btn{background:#D4AF37; color:#0A192F; border:none; padding:14px; width:100%; border-radius:8px; font-weight:700; font-family:'Cairo'; font-size:16px; cursor:pointer; transition:0.3s; display:block; text-decoration:none}
-    .buy-btn:hover{background:#0A192F; color:#D4AF37}
-    .buy-btn:active{transform:scale(0.95)}
+    .btn{background:#D4AF37; color:#0A192F; border:none; padding:14px; width:100%; border-radius:8px; font-weight:700; font-family:'Cairo'; font-size:16px; cursor:pointer; transition:0.3s}
+    .btn:hover{background:#0A192F; color:#D4AF37}
+    .btn:active{transform:scale(0.95)}
 
     /* Stats */
     .stats{background:#0A192F; color:white; padding:60px 20px; text-align:center}
@@ -80,16 +85,16 @@
   <nav>
     <div class="wrap">
       <div class="logo">
-        <img src="images/logo.png" alt="AMM INTL Group">
+        <img src="amm-group-logo.png" alt="AMM INTL Group">
         <h2>AMM INTL Group</h2>
       </div>
       <div class="links">
-        <a href="/amm-shop/">الرئيسية</a>
+        <a href="index.html">الرئيسية</a>
         <a href="#products">منتجاتنا</a>
-        <a href="/amm-shop/gallery.html">معرض الصور</a>
-        <a href="/amm-shop/about.html">من نحن</a>
-        <a href="/amm-shop/b2b-register.html">سجّل كتاجر</a>
-        <a href="/amm-shop/contact.html">تواصل</a>
+        <a href="gallery.html">معرض الصور</a>
+        <a href="about.html">من نحن</a>
+        <a href="b2b-register.html">سجّل كتاجر</a>
+        <a href="contact.html">تواصل</a>
       </div>
     </div>
   </nav>
@@ -98,10 +103,10 @@
   <div class="hero">
     <h1>AMM INTL Group | التجارة الإلكترونية العالمية</h1>
     <p>مجموعة إي إم إم العالمية تقود مستقبل الأسواق الرقمية الذكية من قلب دولة الإمارات العربية المتحدة</p>
-    <p>نختار لك أفضل المنتجات من أمازون الإمارات بعناية</p>
+    <p>نختار لك أفضل المنتجات بعناية</p>
     <div class="hero-btns">
-      <a href="#products" class="hero-btn">تسوق من أمازون الآن</a>
-      <a href="/amm-shop/b2b-register.html" class="hero-btn outline">سجّل كتاجر أو شريك (B2B)</a>
+      <a href="#products" class="hero-btn">تسوق الآن</a>
+      <a href="b2b-register.html" class="hero-btn outline">سجّل كتاجر أو شريك (B2B)</a>
     </div>
   </div>
 
@@ -118,7 +123,7 @@
       <div class="feature">
         <div class="feature-icon">🛍</div>
         <h3>B2C</h3>
-        <p>تجربة تسوق استثنائية للمستهلك مع توصيل سريع من أمازون</p>
+        <p>تجربة تسوق استثنائية للمستهلك مع توصيل سريع</p>
       </div>
       <div class="feature">
         <div class="feature-icon">🏪</div>
@@ -133,22 +138,53 @@
     </div>
   </div>
 
-  <!-- Products - Amazon Affiliate -->
+  <!-- Products -->
   <div class="container" id="products">
-    <h2 class="section-title">عبايات مختارة من أمازون الإمارات</h2>
-    <p class="section-sub">شحن سريع + دفع عند الاستلام + استرجاع مجاني من Amazon.ae</p>
+    <h2 class="section-title">منتجاتنا المميزة</h2>
+    <p class="section-sub">شحن سريع + دفع عند الاستلام + استرجاع مجاني</p>
     <div class="grid">
       
-      <!-- منتج 1: عباية نوخباء -->
+      <!-- منتج 1: آيفون 17 برو ماكس -->
       <div class="card">
-        <img src="https://m.media-amazon.com/images/I/61T-hVmuICL._AC_SY741_.jpg" alt="عباية نوخباء مع حجاب">
+        <img src="https://m.media-amazon.com/images/I/714TxWv1JYL._AC_SX679_.jpg" alt="iPhone 17 Pro Max">
         <div class="card-body">
-          <h3>Nukhbaa Womens Abaya Made With Fine Fabric, Comes With Matching Hijab</h3>
-          <p>قماش فاخر + حجاب مطابق + مقاسات من S إلى XXL + شحن برايم</p>
-          <div class="price">السعر على أمازون</div>
-          <a href="https://amzn.to/4vmZH4z" class="buy-btn" target="_blank">
-            شوف السعر على Amazon.ae
-          </a>
+          <h3>Apple iPhone 17 Pro Max 256GB</h3>
+          <p>Cosmic Orange، شاشة 6.9 بوصة ProMotion، شريحة A19 Pro، كاميرا Pro Fusion</p>
+          <div class="price">4,999 درهم</div>
+          <button class="btn" onclick="addToCart('iPhone 17 Pro Max 256GB Cosmic Orange', 4999, 'https://m.media-amazon.com/images/I/714TxWv1JYL._AC_SX679_.jpg')">أضف للسلة</button>
+        </div>
+      </div>
+
+      <!-- منتج 2: زيت الأرغان -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400" alt="زيت أرغان">
+        <div class="card-body">
+          <h3>زيت الأرغان المغربي الأصلي</h3>
+          <p>زيت طبيعي 100% للشعر والبشرة، معصور على البارد</p>
+          <div class="price">120 درهم</div>
+          <button class="btn" onclick="addToCart('زيت الأرغان المغربي الأصلي', 120, 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400')">أضف للسلة</button>
+        </div>
+      </div>
+
+      <!-- منتج 3: مفرش قطني -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400" alt="مفرش قطن">
+        <div class="card-body">
+          <h3>مفرش سرير قطني فاخر</h3>
+          <p>مفرش قطن مصري 100%، ناعم ومريح، مقاس كينج</p>
+          <div class="price">180 درهم</div>
+          <button class="btn" onclick="addToCart('مفرش سرير قطني فاخر', 180, 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400')">أضف للسلة</button>
+        </div>
+      </div>
+
+      <!-- منتج 4: عباية نوخباء -->
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/61T-hVmuICL._AC_SY741_.jpg" alt="عباية نوخباء">
+        <div class="card-body">
+          <h3>Nukhbaa Womens Abaya مع حجاب</h3>
+          <p>قماش فاخر + حجاب مطابق + مقاسات من S إلى XXL</p>
+          <div class="price">299 درهم</div>
+          <button class="btn" onclick="addToCart('Nukhbaa Womens Abaya مع حجاب', 299, 'https://m.media-amazon.com/images/I/61T-hVmuICL._AC_SY741_.jpg')">أضف للسلة</button>
         </div>
       </div>
 
@@ -180,16 +216,48 @@
   <!-- Footer -->
   <footer>
     <div class="footer-links">
-      <a href="/amm-shop/privacy.html">سياسة الخصوصية</a>
-      <a href="/amm-shop/refund.html">سياسة الاسترجاع</a>
-      <a href="/amm-shop/shipping.html">الشحن والتوصيل</a>
-      <a href="/amm-shop/terms.html">الشروط والأحكام</a>
-      <a href="/amm-shop/contact.html">تواصل معنا</a>
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <a href="refund.html">سياسة الاسترجاع</a>
+      <a href="shipping.html">الشحن والتوصيل</a>
+      <a href="terms.html">الشروط والأحكام</a>
+      <a href="contact.html">تواصل معنا</a>
     </div>
     <p>© 2026 AMM INTL Group. جميع الحقوق محفوظة</p>
     <p style="margin-top:10px; font-size:14px">أم القيوين، الإمارات العربية المتحدة | واتساب: +971 50 812 8499</p>
     <p style="margin-top:15px; font-size:12px; opacity:0.7">AMM INTL Group شريك في برنامج Amazon Associates ونحصل على عمولة من المشتريات المؤهلة.</p>
   </footer>
+
+  <!-- كود السلة -->
+  <script>
+    let cart = JSON.parse(localStorage.getItem('amm_cart')) || [];
+    
+    function addToCart(name, price, img) {
+      cart.push({name: name, price: price, img: img, qty: 1});
+      localStorage.setItem('amm_cart', JSON.stringify(cart));
+      alert('تمت إضافة ' + name + ' للسلة ✅');
+      updateCartIcon();
+    }
+    
+    function updateCartIcon() {
+      let cartLink = document.getElementById('cart-link');
+      if(cartLink) {
+        cartLink.innerHTML = '🛒 السلة (' + cart.length + ')';
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelector('nav .links');
+      if(navLinks && !document.getElementById('cart-link')) {
+        const cartLink = document.createElement('a');
+        cartLink.id = 'cart-link';
+        cartLink.href = 'cart.html';
+        cartLink.innerHTML = '🛒 السلة (' + cart.length + ')';
+        cartLink.style.color = '#D4AF37';
+        cartLink.style.fontWeight = '700';
+        navLinks.appendChild(cartLink);
+      }
+    });
+  </script>
 
 </body>
 </html>
